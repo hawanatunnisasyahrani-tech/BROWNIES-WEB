@@ -3,204 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brownies UMKM - Lezat & Premium</title>
+    <title>Brownies UMKM - Premium</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- CSS STYLES --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* --- CSS (Sama seperti sebelumnya, tidak diubah desainnya) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: #fcfcfc; color: #333; scroll-behavior: smooth; }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fcfcfc;
-            color: #333;
-            line-height: 1.6;
-        }
+        header { background: #fff; width: 100%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .top-bar { background: #fff; border-bottom: 1px solid #eee; padding: 8px 5%; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #777; }
+        .main-navbar { padding: 15px 5%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+        .logo h2 { color: #4a2c2a; font-weight: 700; font-size: 22px; text-transform: uppercase; }
+        .logo span { color: #d4a373; }
 
-        /* --- HEADER & NAVIGATION --- */
-        header {
-            background: #fff;
-            width: 100%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
+        .search-container { flex-grow: 1; max-width: 500px; display: flex; position: relative; }
+        .search-container input { width: 100%; padding: 10px 20px; border: 1px solid #ddd; border-radius: 25px; outline: none; }
+        .btn-search { position: absolute; right: 5px; top: 5px; background: #4a2c2a; color: white; border: none; padding: 6px 18px; border-radius: 20px; cursor: pointer; }
 
-        .top-bar {
-            background: #fff;
-            border-bottom: 1px solid #eee;
-            padding: 8px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-            color: #777;
-        }
+        .nav-right { display: flex; align-items: center; gap: 20px; font-size: 14px; font-weight: 600; color: #4a2c2a; }
 
-        .top-info span {
-            margin-left: 15px;
-        }
+        /* NAV BAR MENU (BAGIAN YANG DIUBAH) */
+        .bottom-nav { padding: 0 5% 15px 5%; display: flex; gap: 30px; }
+        .bottom-nav a { text-decoration: none; color: #4a2c2a; font-size: 15px; font-weight: 600; transition: 0.3s; }
+        .bottom-nav a:hover { color: #d4a373; }
 
-        .main-navbar {
-            padding: 15px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
+        /* HERO & SECTION */
+        .hero { position: relative; width: 100%; height: 80vh; display: flex; align-items: center; overflow: hidden; background: #eee; }
+        .hero-img { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+        .hero-overlay { position: absolute; width: 100%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0.9) 30%, transparent 80%); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; padding-left: 8%; max-width: 600px; }
+        .hero-content h1 { font-size: 45px; color: #4a2c2a; margin-bottom: 20px; }
+        .btn-order { background: #4a2c2a; color: #fff; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 700; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
 
-        .logo h2 {
-            color: #4a2c2a;
-            font-weight: 700;
-            font-size: 22px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: #d4a373;
-        }
-
-        /* Search Bar Ala Lapis Bogor */
-        .search-container {
-            flex-grow: 1;
-            max-width: 500px;
-            display: flex;
-            position: relative;
-        }
-
-        .search-container input {
-            width: 100%;
-            padding: 10px 20px;
-            border: 1px solid #ddd;
-            border-radius: 25px;
-            outline: none;
-            font-size: 14px;
-        }
-
-        .btn-search {
-            position: absolute;
-            right: 5px;
-            top: 5px;
-            background: #4a2c2a;
-            color: white;
-            border: none;
-            padding: 6px 18px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #4a2c2a;
-        }
-
-        .cart-box {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* Menu Bawah Search */
-        .bottom-nav {
-            padding: 0 5% 10px 5%;
-            display: flex;
-            gap: 25px;
-        }
-
-        .bottom-nav a {
-            text-decoration: none;
-            color: #4a2c2a;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .bottom-nav a:hover {
-            color: #d4a373;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 80vh;
-            background-color: #eee;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .hero-img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0.9) 30%, transparent 80%);
-            z-index: 2;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            padding-left: 8%;
-            max-width: 600px;
-        }
-
-        .hero-content h1 {
-            font-size: 45px;
-            color: #4a2c2a;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        .btn-order {
-            background: #4a2c2a;
-            color: #fff;
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(74, 44, 42, 0.3);
-            transition: 0.3s;
-        }
-
-        .btn-order:hover {
-            background: #d4a373;
-            transform: translateY(-3px);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: #4a2c2a;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
+        section { padding: 100px 5%; min-height: 500px; border-bottom: 1px solid #eee; }
+        footer { background: #4a2c2a; color: white; text-align: center; padding: 30px; }
     </style>
 </head>
 <body>
@@ -218,46 +54,63 @@
             <div class="logo">
                 <h2>BROWNIES<span>UMKM</span></h2>
             </div>
-
             <div class="search-container">
                 <input type="text" placeholder="Cari brownies favoritmu...">
                 <button class="btn-search">Cari</button>
             </div>
-
             <div class="nav-right">
-                <div class="user-link">Masuk <i>atau</i> Daftar</div>
-                <div class="cart-box">🛒 <b>Rp0</b></div>
+                <div>Masuk / Daftar</div>
+                <div>🛒 <b>Rp0</b></div>
             </div>
         </div>
 
         <nav class="bottom-nav">
-            <a href="#">Beranda</a>
-            <a href="#">Pesan Banyak</a>
-            <a href="#">Tentang Kami</a>
-            <a href="#">Produk</a>
-            <a href="#">Toko</a>
-            <a href="#">Kontak Kami</a>
-            <a href="#">FAQ</a>
+            <a href="#home">Home</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#produk">Produk</a>
+            <a href="#pemesanan">Pemesanan</a>
+            <a href="#kontak">Kontak</a>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <img src="produk1.jpg" alt="Brownies Banner" class="hero-img">
-            <div class="hero-overlay"></div>
-            
-            <div class="hero-content">
-                <h1>Brownies Premium <br> Nyoklat Banget!</h1>
-                <p>Dibuat dengan bahan pilihan dan cinta, menghasilkan tekstur lembut yang lumer di mulut.</p>
-                <a href="https://wa.me/6285216919157?text=Halo%20Brownies%20UMKM,%20saya%20mau%20pesan%20brownies%20premiumnya" class="btn-order" target="_blank">
-                    Pesan Banyak Klik di Sini
-                </a>
-            </div>
+        <div id="home">
+            <section class="hero" style="padding: 0;">
+                <img src="produk1.jpg" alt="Brownies Banner" class="hero-img">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>Brownies Premium <br> Nyoklat Banget!</h1>
+                    <p>Dibuat dengan bahan pilihan, menghasilkan tekstur lembut yang lumer di mulut.</p>
+                    <a href="https://wa.me/6285216919157?text=Halo%20Brownies%20UMKM,%20saya%20mau%20pesan" class="btn-order" target="_blank">
+                        Pesan Sekarang
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <section id="tentang">
+            <h2>Tentang Kami</h2>
+            <p>Informasi mengenai profil Brownies UMKM...</p>
+        </section>
+
+        <section id="produk">
+            <h2>Produk Kami</h2>
+            <p>Daftar brownies lezat pilihan Anda...</p>
+        </section>
+
+        <section id="pemesanan">
+            <h2>Pemesanan</h2>
+            <p>Cara mudah memesan brownies kami melalui WhatsApp atau langsung ke toko.</p>
+        </section>
+
+        <section id="kontak">
+            <h2>Kontak</h2>
+            <p>Hubungi kami di 0852-1691-9157 atau kunjungi media sosial kami.</p>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Digitalisasi UMKM – Brownies Lezat. All Rights Reserved.</p>
+        <p>© 2026 Digitalisasi UMKM – Brownies Lezat</p>
     </footer>
 
 </body>
