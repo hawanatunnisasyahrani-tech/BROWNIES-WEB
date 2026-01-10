@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -15,107 +14,71 @@ body{background:#faf7f2;color:#3a2a1a}
 
 /* NAVBAR */
 nav{
-position:fixed;
-top:0;left:0;
-width:100%;
-background:rgba(43,27,18,.95);
+position:fixed;top:0;left:0;width:100%;
+background:rgba(35,20,12,.95);
 padding:12px 6%;
-display:flex;
-justify-content:space-between;
-align-items:center;
+display:flex;justify-content:space-between;align-items:center;
 z-index:999;
 }
-nav h2{color:#f3c892}
+nav h2{color:#ffcf9f}
 nav .menu{display:flex;gap:20px}
 nav a{color:white;text-decoration:none;font-weight:500;font-size:15px}
-nav a:hover{color:#f3c892}
-
-/* MOBILE NAV */
+nav a:hover{color:#ffcf9f}
 .menu-btn{display:none;color:white;font-size:22px;cursor:pointer}
 
 @media(max-width:768px){
-nav .menu{
-position:absolute;
-top:60px;left:0;
-background:#2b1b12;
-width:100%;
-flex-direction:column;
-align-items:center;
-display:none;
-padding:20px 0;
-}
+nav .menu{position:absolute;top:60px;left:0;background:#23140c;width:100%;flex-direction:column;align-items:center;display:none;padding:20px 0;}
 nav .menu.active{display:flex}
 .menu-btn{display:block}
 }
 
-/* HERO SLIDER */
-.hero{
-margin-top:65px;
-position:relative;
-width:100%;
-height:100vh;
-overflow:hidden;
-}
-
+/* HERO */
+.hero{margin-top:65px;position:relative;width:100%;height:100vh;overflow:hidden}
 .slider img{
-width:100%;
-height:100vh;
-object-fit:cover;
-position:absolute;
-opacity:0;
-transition:opacity 1s ease-in-out;
+width:100%;height:100vh;object-fit:cover;
+position:absolute;opacity:0;transition:opacity 1s ease-in-out;
 }
 .slider img.active{opacity:1}
 
-/* HERO OVERLAY */
+/* OVERLAY */
 .hero-content{
-position:absolute;
-top:0;left:0;
-width:100%;height:100%;
-background:linear-gradient(to top, rgba(43,27,18,.65), rgba(0,0,0,.2));
-display:flex;
-align-items:center;
-padding:0 8%;
-color:white;
+position:absolute;top:0;left:0;width:100%;height:100%;
+background:linear-gradient(to top, rgba(20,10,5,.75), rgba(0,0,0,.2));
+display:flex;align-items:center;padding:0 8%;color:white;
 }
-
-.hero-content h1{font-size:48px;color:#ffd8a8}
+.hero-content h1{font-size:48px;color:#ffd9a8}
 .hero-content p{max-width:550px;margin:18px 0}
 
 .btn{
-display:inline-block;
-background:#ffd8a8;
-color:#2b1b12;
-padding:12px 28px;
-border-radius:30px;
-font-weight:600;
-text-decoration:none;
-transition:.3s;
+display:inline-block;background:#ffd9a8;color:#2b1b12;
+padding:12px 28px;border-radius:30px;font-weight:600;
+text-decoration:none;transition:.3s
 }
 .btn:hover{background:white}
 
 /* DOT */
-.nav-slider{
-position:absolute;
-bottom:25px;
-width:100%;
-text-align:center;
-}
-.dot{
-display:inline-block;
-width:10px;height:10px;
-margin:0 4px;
-background:#fff;
-border-radius:50%;
-opacity:.4;
-cursor:pointer;
-}
-.dot.active{opacity:1;background:#ffd8a8}
+.nav-slider{position:absolute;bottom:25px;width:100%;text-align:center}
+.dot{display:inline-block;width:10px;height:10px;margin:0 4px;background:#fff;border-radius:50%;opacity:.4;cursor:pointer}
+.dot.active{opacity:1;background:#ffd9a8}
 
 /* SECTION */
 section{padding:90px 8%}
-.title{text-align:center;margin-bottom:45px}
+.title{text-align:center;margin-bottom:40px}
 .title h2{font-size:34px}
+
+/* HOME PRODUCT SLIDER */
+.home-products{margin-top:50px}
+.home-track{
+display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px
+}
+.home-track::-webkit-scrollbar{display:none}
+.home-card{
+min-width:260px;background:white;border-radius:18px;overflow:hidden;
+box-shadow:0 8px 18px rgba(0,0,0,.12);scroll-snap-align:start
+}
+.home-card img{width:100%;height:180px;object-fit:cover}
+.home-card div{padding:14px;text-align:center}
+.seeall{text-align:center;margin-top:25px}
 
 /* ABOUT */
 .about{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:35px;align-items:center}
@@ -125,8 +88,7 @@ section{padding:90px 8%}
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
 .card{
 background:white;border-radius:18px;overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-transition:.3s
+box-shadow:0 10px 25px rgba(0,0,0,.1);transition:.3s
 }
 .card:hover{transform:translateY(-6px)}
 .card img{width:100%;height:220px;object-fit:cover}
@@ -135,17 +97,12 @@ transition:.3s
 
 /* ORDER */
 .order-box{
-max-width:650px;margin:auto;
-background:white;padding:40px;border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-text-align:center
+max-width:650px;margin:auto;background:white;padding:40px;
+border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.1);text-align:center
 }
 
 /* FOOTER */
-footer{
-background:#2b1b12;color:white;text-align:center;
-padding:25px;margin-top:60px
-}
+footer{background:#23140c;color:white;text-align:center;padding:25px;margin-top:60px}
 </style>
 </head>
 
@@ -166,7 +123,6 @@ padding:25px;margin-top:60px
 
 <!-- HOME -->
 <div class="hero" id="home">
-
 <div class="slider">
 <img src="brownies1.jpg" class="active">
 <img src="brownies2.jpg">
@@ -178,8 +134,22 @@ padding:25px;margin-top:60px
 <div class="hero-content">
 <div>
 <h1>Brownies Premium Homemade</h1>
-<p>Brownies padat, lembut, dan kaya coklat. Cocok untuk camilan, hadiah, dan berbagai momen spesial.</p>
-<a class="btn" target="_blank" href="https://wa.me/6285216919157?text=Halo%20saya%20ingin%20memesan%20brownies">Pesan Sekarang</a>
+<p>Brownies padat, lembut, kaya coklat. Dibuat homemade dengan fokus kualitas rasa.</p>
+<a class="btn" href="#produk">Lihat Produk</a>
+
+<!-- HOME PRODUCT SLIDER -->
+<div class="home-products">
+<div class="home-track">
+<div class="home-card"><img src="produk1.jpg"><div>Brownies Original</div></div>
+<div class="home-card"><img src="produk2.jpg"><div>Brownies Keju</div></div>
+<div class="home-card"><img src="produk3.jpg"><div>Brownies Kacang</div></div>
+<div class="home-card"><img src="produk4.jpg"><div>Choco Chips</div></div>
+</div>
+<div class="seeall">
+<a class="btn" href="#produk">See All Products</a>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -195,70 +165,49 @@ padding:25px;margin-top:60px
 <!-- TENTANG -->
 <section id="about">
 <div class="title"><h2>Tentang Kami</h2></div>
-
 <div class="about">
 <div>
+<h3>Profil Brand</h3>
+<p><b>Brownies UMKM</b> adalah usaha rumahan yang bergerak di bidang kuliner dengan fokus pada brownies padat premium.</p>
 
-<h3 style="margin-bottom:10px;color:#2b1b12;">Profil Brand</h3>
-<p><b>Brownies UMKM</b> adalah usaha rumahan yang bergerak di bidang kuliner, khususnya pembuatan dan penjualan brownies padat premium dengan cita rasa cokelat yang khas.</p>
+<h3 style="margin-top:12px">Cerita Usaha</h3>
+<p>Dirintis dari dapur rumah dengan peralatan sederhana. Kami mengutamakan proses yang higienis dan konsistensi rasa.</p>
 
-<h3 style="margin:18px 0 10px;color:#2b1b12;">Apa yang Kami Jual</h3>
-<p>Kami menyediakan berbagai varian brownies padat seperti brownies original, keju, kacang, choco chips, hingga varian spesial. Semua produk dibuat fresh dan siap dipesan untuk kebutuhan pribadi, acara, maupun hadiah.</p>
+<h3 style="margin-top:12px">Fokus Kami</h3>
+<p>Kualitas bahan, tekstur lembut, rasa coklat kuat, dan kepuasan pelanggan.</p>
 
-<h3 style="margin:18px 0 10px;color:#2b1b12;">Cerita Singkat Usaha</h3>
-<p>Usaha ini dirintis dari rumah, berawal dari dapur sederhana dengan tujuan menghadirkan brownies rumahan yang berkualitas. Setiap brownies dibuat secara homemade dengan proses yang higienis dan penuh ketelitian.</p>
-
-<h3 style="margin:18px 0 10px;color:#2b1b12;">Fokus Kami</h3>
-<p>Kami memfokuskan usaha pada kualitas bahan, tekstur brownies yang padat dan lembut, serta rasa cokelat yang kuat dan konsisten. Kepuasan pelanggan menjadi prioritas utama dalam setiap produksi.</p>
-
-<h3 style="margin:18px 0 10px;color:#2b1b12;">Keunggulan Utama</h3>
-<ul style="padding-left:18px;line-height:1.8">
-<li>✔ Dibuat homemade langsung dari dapur sendiri</li>
-<li>✔ Menggunakan bahan pilihan berkualitas</li>
-<li>✔ Tekstur padat, lembut, dan tidak bantat</li>
+<h3 style="margin-top:12px">Keunggulan</h3>
+<ul style="margin-left:18px;line-height:1.8">
+<li>✔ Homemade dari dapur sendiri</li>
+<li>✔ Bahan pilihan</li>
+<li>✔ Tekstur padat tidak bantat</li>
 <li>✔ Banyak varian rasa</li>
-<li>✔ Bisa pesan langsung via WhatsApp</li>
 </ul>
 
-<h3 style="margin:18px 0 10px;color:#2b1b12;">Penutup</h3>
-<p>Kami berharap <b>Brownies UMKM</b> dapat menjadi pilihan camilan dan oleh-oleh favorit Anda. Terima kasih telah mendukung usaha kecil kami untuk terus berkembang dan menghadirkan produk terbaik.</p>
-
-<p style="margin-top:15px"><b>Jam Operasional:</b><br>Senin – Sabtu (08.00 – 20.00 WIB)</p>
-<p><b>Kontak:</b><br>WhatsApp: 0852-1691-9157</p>
-
+<h3 style="margin-top:12px">Penutup</h3>
+<p>Kami berharap Brownies UMKM menjadi pilihan favorit camilan dan oleh-oleh Anda.</p>
 </div>
-
-<img src="tentang.jpg" alt="Tentang Brownies UMKM">
-
+<img src="tentang.jpg">
 </div>
 </section>
-
 
 <!-- PRODUK -->
 <section id="produk">
 <div class="title"><h2>Katalog Produk</h2></div>
-
 <div class="products">
-<div class="card"><img src="produk1.jpg"><div class="box"><h3>Brownies Original</h3><p class="price">Rp 25.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
-<div class="card"><img src="produk2.jpg"><div class="box"><h3>Brownies Keju</h3><p class="price">Rp 30.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
-<div class="card"><img src="produk3.jpg"><div class="box"><h3>Brownies Kacang</h3><p class="price">Rp 30.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
-<div class="card"><img src="produk4.jpg"><div class="box"><h3>Choco Chips</h3><p class="price">Rp 32.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
-<div class="card"><img src="produk5.jpg"><div class="box"><h3>Brownies Lumer</h3><p class="price">Rp 35.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
-<div class="card"><img src="produk6.jpg"><div class="box"><h3>Matcha</h3><p class="price">Rp 32.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
-<div class="card"><img src="produk7.jpg"><div class="box"><h3>Tiramisu</h3><p class="price">Rp 33.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
-<div class="card"><img src="produk8.jpg"><div class="box"><h3>Special Box</h3><p class="price">Rp 50.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
+<div class="card"><img src="produk1.jpg"><div class="box"><h3>Brownies Original</h3><p class="price">Rp25.000</p><a class="btn" href="https://wa.me/6285216919157">Pesan</a></div></div>
+<div class="card"><img src="produk2.jpg"><div class="box"><h3>Brownies Keju</h3><p class="price">Rp30.000</p><a class="btn" href="https://wa.me/6285216919157">Pesan</a></div></div>
+<div class="card"><img src="produk3.jpg"><div class="box"><h3>Brownies Kacang</h3><p class="price">Rp30.000</p><a class="btn" href="https://wa.me/6285216919157">Pesan</a></div></div>
+<div class="card"><img src="produk4.jpg"><div class="box"><h3>Choco Chips</h3><p class="price">Rp32.000</p><a class="btn" href="https://wa.me/6285216919157">Pesan</a></div></div>
 </div>
 </section>
 
-<!-- PEMESANAN -->
+<!-- ORDER -->
 <section id="order">
-<div class="title"><h2>Sistem Pemesanan</h2></div>
+<div class="title"><h2>Pemesanan</h2></div>
 <div class="order-box">
-<p>Pemesanan dilakukan melalui WhatsApp.</p>
-<p><b>Format:</b> Nama / Produk / Jumlah / Alamat</p>
-<a class="btn" target="_blank"
-href="https://wa.me/6285216919157?text=Halo%20saya%20ingin%20memesan:%0ANama:%0AProduk:%0AJumlah:%0AAlamat:">
-Pesan via WhatsApp</a>
+<p>Format: Nama / Produk / Jumlah / Alamat</p>
+<a class="btn" href="https://wa.me/6285216919157">Pesan via WhatsApp</a>
 </div>
 </section>
 
@@ -266,21 +215,19 @@ Pesan via WhatsApp</a>
 <section id="kontak">
 <div class="title"><h2>Kontak</h2></div>
 <p style="text-align:center">
-<b>Brownies UMKM</b><br>
 WhatsApp: 0852-1691-9157<br>
-Jam Operasional: Senin – Sabtu (08.00 – 20.00 WIB)<br>
-Alamat: (isi alamat UMKM)
+Jam Operasional: Senin – Sabtu (08.00 – 20.00 WIB)
 </p>
 </section>
 
 <footer>
-<p>© 2026 Digitalisasi UMKM – Brownies</p>
+<p>© 2026 Brownies UMKM</p>
 </footer>
 
 <script>
-let slides = document.querySelectorAll(".slider img");
-let dots = document.querySelectorAll(".dot");
-let index = 0;
+let slides=document.querySelectorAll(".slider img");
+let dots=document.querySelectorAll(".dot");
+let index=0;
 
 function showSlide(i){
 slides.forEach(s=>s.classList.remove("active"));
@@ -290,7 +237,7 @@ dots[i].classList.add("active");
 }
 
 setInterval(()=>{
-index = (index+1)%slides.length;
+index=(index+1)%slides.length;
 showSlide(index);
 },4000);
 
