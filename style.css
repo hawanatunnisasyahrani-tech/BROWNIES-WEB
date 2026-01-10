@@ -61,6 +61,7 @@ nav a:hover{ color:#ffd8a8; }
   align-items:center;
   justify-content:center;
 }
+
 .hero-slider img{
   width:100%;
   height:75vh;
@@ -70,21 +71,26 @@ nav a:hover{ color:#ffd8a8; }
   transition:opacity 1s ease-in-out;
 }
 .hero-slider img.active{ opacity:1; }
+
+/* Overlay lebih gelap agar teks terlihat */
 .hero-overlay{
   position:absolute;
   top:0; left:0;
   width:100%; height:100%;
-  background:rgba(0,0,0,0.35);
+  background:rgba(0,0,0,0.5); /* dari 0.35 jadi 0.5 */
 }
+
+/* Teks hero */
 .hero-text{
   position:absolute;
-  color:white;
+  color:#ffd8a8; /* kuning krem cerah, lebih kontras */
   text-align:center;
   max-width:600px;
   z-index:2;
 }
 .hero-text h1{ font-size:36px; margin-bottom:15px; }
 .hero-text p{ font-size:16px; margin-bottom:20px; }
+}
 .btn{
   background:#ffd8a8;
   color:#2b1b12;
