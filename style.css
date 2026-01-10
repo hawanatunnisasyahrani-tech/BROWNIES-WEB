@@ -51,55 +51,66 @@ nav a:hover{ color:#ffd8a8; }
   .menu-btn{ display:block; }
 }
 
-/* HERO */
-.hero{
-  position:relative;
-  width:100%;
-  height:75vh;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.hero-slider img {
-  width: auto; /* biar tidak full lebar kalau mau ada jarak samping */
-  max-width: 90%; /* kecilin samping kanan kiri */
+.hero {
+  position: relative;
+  width: 100%;
   height: 75vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-slider {
+  position: relative;
+  width: 80%; /* bikin ada jarak kanan kiri */
+  height: 100%;
+}
+
+.hero-slider img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  left: 50%;
-  transform: translateX(-50%); /* supaya tetap di tengah */
+  border-radius: 15px; /* biar gambar cantik ada rounded */
 }
 
 .hero-slider img.active {
   opacity: 1;
 }
-  position:absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:rgba(0,0,0,0.35);
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.35);
 }
-.hero-text{
-  position:absolute;
-  color:white;
-  text-align:center;
-  max-width:600px;
-  z-index:2;
+
+.hero-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
 }
-.hero-text h1{ font-size:36px; margin-bottom:15px; }
-.hero-text p{ font-size:16px; margin-bottom:20px; }
-.btn{
-  background:#ffd8a8;
-  color:#2b1b12;
-  padding:12px 28px;
-  border-radius:30px;
-  font-weight:600;
-  text-decoration:none;
-  transition:0.3s;
+
+.hero-text .btn {
+  background: #ffd8a8;
+  color: #2b1b12;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
 }
-.btn:hover{ background:white; }
+
+.hero-text .btn:hover {
+  background: white;
+}
+
 
 /* OUR PRODUCTS */
 .our-products{ padding:80px 6%; text-align:center; background:#fff; }
