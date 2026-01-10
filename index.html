@@ -166,126 +166,117 @@
 </section>
 
        <section id="produk" style="background-color: #fff; padding: 80px 5%;">
-            <div style="text-align: center; margin-bottom: 50px;">
-                <h2 style="color: #4a2c2a; font-size: 36px; font-weight: 700;">Katalog Produk Kami</h2>
-                <div style="width: 80px; height: 4px; background: #d4a373; margin: 15px auto;"></div>
-                <p style="color: #777; font-size: 18px;">Pilih varian brownies favorit Anda, dibuat fresh setiap hari.</p>
+    <div style="text-align: center; margin-bottom: 50px;">
+        <h2 style="color: #4a2c2a; font-size: 36px; font-weight: 700;">Katalog Produk Kami</h2>
+        <div style="width: 80px; height: 4px; background: #d4a373; margin: 15px auto;"></div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+        
+        <div class="product-card" style="background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center;">
+            <img src="produk1.jpg" style="width: 100%; height: 220px; object-fit: cover;">
+            <div style="padding: 20px;">
+                <p style="color: #d4a373; font-size: 12px; font-weight: 700;">SIGNATURE</p>
+                <h3 style="color: #4a2c2a; font-size: 18px; margin: 10px 0;">Brownies Signature Keju</h3>
+                <p style="color: #4a2c2a; font-weight: bold; margin-bottom: 15px;">Rp 46.000</p>
+                <button onclick="openProduct('keju')" style="background: #f4f4f4; color: #4a2c2a; border: none; padding: 10px 25px; border-radius: 5px; font-weight: bold; cursor: pointer;">READ MORE</button>
+            </div>
+        </div>
+
+        <div class="product-card" style="background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center;">
+            <img src="produk2.jpg" style="width: 100%; height: 220px; object-fit: cover;">
+            <div style="padding: 20px;">
+                <p style="color: #d4a373; font-size: 12px; font-weight: 700;">BEST SELLER</p>
+                <h3 style="color: #4a2c2a; font-size: 18px; margin: 10px 0;">Brownies Choco Almond</h3>
+                <p style="color: #4a2c2a; font-weight: bold; margin-bottom: 15px;">Rp 45.000</p>
+                <button onclick="openProduct('almond')" style="background: #f4f4f4; color: #4a2c2a; border: none; padding: 10px 25px; border-radius: 5px; font-weight: bold; cursor: pointer;">READ MORE</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div id="productModal" style="display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); overflow-y: auto; padding: 20px;">
+    <div style="background: #fff; margin: auto; width: 100%; max-width: 1000px; border-radius: 15px; position: relative; display: flex; flex-wrap: wrap; overflow: hidden; min-height: 500px;">
+        
+        <span onclick="closeModal()" style="position: absolute; right: 20px; top: 10px; font-size: 35px; cursor: pointer; color: #333; z-index: 10;">&times;</span>
+
+        <div style="flex: 1; min-width: 300px;">
+            <img id="modalImg" src="" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <div style="flex: 1.2; padding: 40px; min-width: 300px; text-align: left;">
+            <h2 id="modalTitle" style="color: #4a2c2a; margin-bottom: 5px;"></h2>
+            <p id="modalPrice" style="font-size: 24px; color: #d4a373; font-weight: 700; margin-bottom: 15px;"></p>
+            <p id="modalShortDesc" style="color: #555; margin-bottom: 15px; font-style: italic;"></p>
+            
+            <p id="modalStock" style="color: #d9534f; font-weight: bold; margin-bottom: 20px;"></p>
+            
+            <div style="font-size: 13px; color: #888; border-top: 1px solid #eee; padding-top: 15px; margin-bottom: 20px;">
+                <p id="modalSKU"></p>
+                <p id="modalCat"></p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
-                
-                <div class="product-card" style="background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column;">
-                    <img src="produk1.jpg" alt="Brownies Choco Almond" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                            <h3 style="color: #4a2c2a; font-size: 20px; margin-bottom: 10px;">Brownies Choco Almond 12 kotak</h3>
-                            <p style="color: #888; font-size: 14px; margin-bottom: 15px;">Brownies panggang dengan topping irisan almond renyah yang melimpah.</p>
-                        </div>
-                        <div>
-                            <p style="color: #d4a373; font-size: 18px; font-weight: 700; margin-bottom: 15px;">Rp 85.000</p>
-                            <a href="https://wa.me/6285216919157?text=Halo,%20saya%20mau%20pesan%20Brownies%20Choco%20Almond" target="_blank" style="display: block; text-align: center; background: #4a2c2a; color: #fff; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 14px;">Pesan via WA</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" style="background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column;">
-                    <img src="produk2.jpg" alt="Brownies Keju Premium" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                            <h3 style="color: #4a2c2a; font-size: 20px; margin-bottom: 10px;">Brownies Choco Almond<</h3>
-                            <p style="color: #888; font-size: 14px; margin-bottom: 15px;">Brownies panggang dengan topping irisan almond renyah yang melimpah..</p>
-                        </div>
-                        <div>
-                            <p style="color: #d4a373; font-size: 18px; font-weight: 700; margin-bottom: 15px;">Rp 50.000</p>
-                            <a href="https://wa.me/6285216919157?text=Halo,%20saya%20mau%20pesan%20Brownies%20Keju%20Melt" target="_blank" style="display: block; text-align: center; background: #4a2c2a; color: #fff; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 14px;">Pesan via WA</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" style="background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column;">
-                    <img src="produk3.jpg" alt="Brownies Fudgy Original" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                            <h3 style="color: #4a2c2a; font-size: 20px; margin-bottom: 10px;">Fudgy Brownies Original</h3>
-                            <p style="color: #888; font-size: 14px; margin-bottom: 15px;">Brownies klasik dengan tekstur lembab (fudgy) dan lapisan shiny crust.</p>
-                        </div>
-                        <div>
-                            <p style="color: #d4a373; font-size: 18px; font-weight: 700; margin-bottom: 15px;">Rp 40.000</p>
-                            <a href="https://wa.me/6285216919157?text=Halo,%20saya%20mau%20pesan%20Fudgy%20Brownies%20Original" target="_blank" style="display: block; text-align: center; background: #4a2c2a; color: #fff; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 14px;">Pesan via WA</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" style="background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column;">
-                    <img src="produk4.jpg" alt="Brownies Oreo" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                            <h3 style="color: #4a2c2a; font-size: 20px; margin-bottom: 10px;">Brownies Oreo Crunchy</h3>
-                            <p style="color: #888; font-size: 14px; margin-bottom: 15px;">Toping biskuit Oreo yang memberikan sensasi crunchy di setiap gigitan.</p>
-                        </div>
-                        <div>
-                            <p style="color: #d4a373; font-size: 18px; font-weight: 700; margin-bottom: 15px;">Rp 48.000</p>
-                            <a href="https://wa.me/6285216919157?text=Halo,%20saya%20mau%20pesan%20Brownies%20Oreo" target="_blank" style="display: block; text-align: center; background: #4a2c2a; color: #fff; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 14px;">Pesan via WA</a>
-                        </div>
-                    </div>
-                </div>
- <div class="product-card" style="background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column;">
-                    <img src="produk5.jpg" alt="Brownies Choco Almond" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                            <h3 style="color: #4a2c2a; font-size: 20px; margin-bottom: 10px;">Brownies Choco Almond</h3>
-                            <p style="color: #888; font-size: 14px; margin-bottom: 15px;">Brownies panggang dengan topping irisan almond renyah yang melimpah.</p>
-                        </div>
-                        <div>
-                            <p style="color: #d4a373; font-size: 18px; font-weight: 700; margin-bottom: 15px;">Rp 45.000</p>
-                            <a href="https://wa.me/6285216919157?text=Halo,%20saya%20mau%20pesan%20Brownies%20Choco%20Almond" target="_blank" style="display: block; text-align: center; background: #4a2c2a; color: #fff; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 14px;">Pesan via WA</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" style="background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column;">
-                    <img src="produk6.jpg" alt="Brownies Keju Premium" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                            <h3 style="color: #4a2c2a; font-size: 20px; margin-bottom: 10px;">Brownies Keju Melt</h3>
-                            <p style="color: #888; font-size: 14px; margin-bottom: 15px;">Perpaduan adonan cokelat pekat dengan parutan keju cheddar premium.</p>
-                        </div>
-                        <div>
-                            <p style="color: #d4a373; font-size: 18px; font-weight: 700; margin-bottom: 15px;">Rp 50.000</p>
-                            <a href="https://wa.me/6285216919157?text=Halo,%20saya%20mau%20pesan%20Brownies%20Keju%20Melt" target="_blank" style="display: block; text-align: center; background: #4a2c2a; color: #fff; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 14px;">Pesan via WA</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" style="background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column;">
-                    <img src="produk7.jpg" alt="Brownies Fudgy Original" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                            <h3 style="color: #4a2c2a; font-size: 20px; margin-bottom: 10px;">Fudgy Brownies Original</h3>
-                            <p style="color: #888; font-size: 14px; margin-bottom: 15px;">Brownies klasik dengan tekstur lembab (fudgy) dan lapisan shiny crust.</p>
-                        </div>
-                        <div>
-                            <p style="color: #d4a373; font-size: 18px; font-weight: 700; margin-bottom: 15px;">Rp 40.000</p>
-                            <a href="https://wa.me/6285216919157?text=Halo,%20saya%20mau%20pesan%20Fudgy%20Brownies%20Original" target="_blank" style="display: block; text-align: center; background: #4a2c2a; color: #fff; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 14px;">Pesan via WA</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" style="background: #fff; border: 1px solid #eee; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column;">
-                    <img src="produk8.jpg" alt="Brownies Oreo" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                            <h3 style="color: #4a2c2a; font-size: 20px; margin-bottom: 10px;">Brownies Oreo Crunchy</h3>
-                            <p style="color: #888; font-size: 14px; margin-bottom: 15px;">Toping biskuit Oreo yang memberikan sensasi crunchy di setiap gigitan.</p>
-                        </div>
-                        <div>
-                            <p style="color: #d4a373; font-size: 18px; font-weight: 700; margin-bottom: 15px;">Rp 48.000</p>
-                            <a href="https://wa.me/6285216919157?text=Halo,%20saya%20mau%20pesan%20Brownies%20Oreo" target="_blank" style="display: block; text-align: center; background: #4a2c2a; color: #fff; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 14px;">Pesan via WA</a>
-                        </div>
-                    </div>
-                </div>
-
+            <div style="background: #fdfdfd; padding: 20px; border-radius: 10px; border: 1px solid #f0f0f0;">
+                <h4 style="color: #4a2c2a; margin-bottom: 10px; border-bottom: 2px solid #d4a373; display: inline-block;">DESKRIPSI</h4>
+                <p id="modalLongDesc" style="font-size: 14px; color: #666; line-height: 1.6;"></p>
             </div>
+
+            <a id="modalWA" href="" target="_blank" style="display: block; text-align: center; background: #4a2c2a; color: white; padding: 15px; border-radius: 8px; text-decoration: none; margin-top: 25px; font-weight: bold;">TANYA KETERSEDIAAN VIA WA</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Database Produk (Kamu bisa tambah sesuka hati di sini)
+    const dataProduk = {
+        'keju': {
+            title: "Brownies Signature Keju",
+            price: "Rp 46.000",
+            short: "Rasa talas yang autentik ditambah kejunya yang gurih bikin setiap gigitan nagih!",
+            img: "produk1.jpg",
+            stock: "Out Of Stock",
+            sku: "SKU: BRS00033-1",
+            cat: "Category: Signature",
+            long: "Sekarang Brownies UMKM hadir dengan kemasan premium lebih lembut & isian kejunya lebih melimpah!<br><br><b>Saran Penyimpanan:</b><br>- Hindari matahari langsung<br>- Simpan di suhu 25°C atau kulkas 5°C<br>- Tahan 6 hari."
+        },
+        'almond': {
+            title: "Brownies Choco Almond",
+            price: "Rp 45.000",
+            short: "Perpaduan cokelat premium dan taburan almond yang renyah.",
+            img: "produk2.jpg",
+            stock: "In Stock",
+            sku: "SKU: BRS00045-2",
+            cat: "Category: Best Seller",
+            long: "Brownies panggang dengan tekstur fudgy yang kaya akan rasa cokelat. Di atasnya ditaburi irisan almond California.<br><br><b>Saran Penyimpanan:</b><br>- Tahan 7 hari di suhu ruang.<br>- Lebih nikmat jika dipanaskan 10 detik di microwave."
+        }
+    };
+
+    function openProduct(key) {
+        const item = dataProduk[key];
+        document.getElementById("modalTitle").innerText = item.title;
+        document.getElementById("modalPrice").innerText = item.price;
+        document.getElementById("modalShortDesc").innerText = item.short;
+        document.getElementById("modalImg").src = item.img;
+        document.getElementById("modalStock").innerText = item.stock;
+        document.getElementById("modalSKU").innerText = item.sku;
+        document.getElementById("modalCat").innerText = item.cat;
+        document.getElementById("modalLongDesc").innerHTML = item.long;
+        document.getElementById("modalWA").href = "https://wa.me/6285216919157?text=Halo, apa produk " + item.title + " tersedia?";
+        
+        document.getElementById("productModal").style.display = "flex";
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+        document.getElementById("productModal").style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("productModal")) { closeModal(); }
+    }
+</script>
         </section>
 <section id="pemesanan" style="padding: 80px 5%; background-color: #fdfdfd;">
     <div style="max-width: 1000px; margin: 0 auto;">
