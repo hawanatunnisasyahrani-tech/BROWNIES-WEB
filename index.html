@@ -94,6 +94,24 @@
         padding: 12px 25px;
         font-size: 14px;
     }
+    
+}
+        /* Menghindari penumpukan di Navbar */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsif untuk HP: Search bar pindah ke bawah logo tapi tetap rapi */
+@media (max-width: 768px) {
+    .search-wrapper {
+        width: 100%;
+        margin: 10px 0;
+        order: 2; /* Mengatur urutan di HP */
+    }
+    .search-container {
+        max-width: none; /* Lebar penuh di HP */
+    }
 }
     </style>
 </head>
@@ -108,14 +126,17 @@
             </div>
         </div>
 
-        <div class="search-container" style="display: flex; align-items: center; background: #f4f4f4; border-radius: 30px; padding: 5px 15px; width: 300px;">
-    <input type="text" id="searchInput" placeholder="Cari produk brownies..." style="border: none; background: none; outline: none; padding: 8px; width: 100%; font-size: 14px;">
-    
-    <button onclick="searchProduct()" style="background: #4a2c2a; color: white; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: bold; font-size: 14px;">
-        Cari
-    </button>
+        <div class="search-wrapper" style="flex: 1; display: flex; justify-content: center; margin: 0 20px;">
+    <div class="search-container" style="display: flex; align-items: center; background: #f4f4f4; border-radius: 30px; padding: 5px 15px; width: 100%; max-width: 400px; border: 1px solid #eee;">
+        <input type="text" id="searchInput" placeholder="Cari produk brownies..." 
+            style="border: none; background: none; outline: none; padding: 8px; width: 100%; font-size: 14px; font-family: 'Poppins', sans-serif;">
+        
+        <button onclick="searchProduct()" 
+            style="background: #4a2c2a; color: white; border: none; padding: 8px 25px; border-radius: 25px; cursor: pointer; font-weight: bold; font-size: 14px; transition: 0.3s;">
+            Cari
+        </button>
+    </div>
 </div>
-
         <nav class="bottom-nav">
             <a href="#home">Home</a>
             <a href="#tentang">Tentang</a>
