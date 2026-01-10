@@ -1,209 +1,266 @@
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brownies UMKM</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Argani Brownies</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
-body{background:#faf7f2;color:#3a2a1a}
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f0f14;
+    color: white;
+}
 
 /* NAVBAR */
-nav{
-position:fixed;top:0;left:0;width:100%;
-background:rgba(43,27,18,.95);
-padding:12px 6%;display:flex;
-justify-content:space-between;align-items:center;z-index:999;
-}
-nav h2{color:#f3c892}
-nav .menu{display:flex;gap:20px}
-nav a{color:white;text-decoration:none;font-weight:500}
-nav a:hover{color:#f3c892}
-.menu-btn{display:none;color:white;font-size:22px;cursor:pointer}
-@media(max-width:768px){
-nav .menu{position:absolute;top:60px;left:0;background:#2b1b12;width:100%;flex-direction:column;align-items:center;display:none;padding:20px 0}
-nav .menu.active{display:flex}
-.menu-btn{display:block}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 10%;
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
 }
 
-/* HERO */
-.hero{margin-top:65px;position:relative;width:100%;height:100vh;overflow:hidden}
-.slider img{width:100%;height:100vh;object-fit:cover;position:absolute;opacity:0;transition:1s}
-.slider img.active{opacity:1}
-.hero-content{
-position:absolute;top:0;left:0;width:100%;height:100%;
-background:linear-gradient(to top, rgba(43,27,18,.7), rgba(0,0,0,.2));
-display:flex;align-items:center;padding:0 8%;color:white;
+nav h2 {
+    color: #ffb703;
 }
-.hero-content h1{font-size:48px;color:#ffd8a8}
-.hero-content p{max-width:550px;margin:18px 0}
 
-/* BUTTON */
-.btn{display:inline-block;background:#ffd8a8;color:#2b1b12;padding:12px 28px;border-radius:30px;font-weight:600;text-decoration:none}
-.btn:hover{background:white}
-
-/* DOT */
-.nav-slider{position:absolute;bottom:25px;width:100%;text-align:center}
-.dot{display:inline-block;width:10px;height:10px;margin:0 4px;background:#fff;border-radius:50%;opacity:.4;cursor:pointer}
-.dot.active{opacity:1;background:#ffd8a8}
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
 
 /* SECTION */
-section{padding:90px 8%}
-.title{text-align:center;margin-bottom:45px}
-.title h2{font-size:34px}
-
-/* ABOUT */
-.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:35px;align-items:center}
-.about img{width:100%;border-radius:20px}
-
-/* ===== KATALOG PRODUK ===== */
-
-/* slider produk */
-.product-slider{
-display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:15px
+section {
+    padding: 100px 10%;
 }
-.product-slider::-webkit-scrollbar{height:6px}
-.product-slider::-webkit-scrollbar-thumb{background:#cfa670;border-radius:10px}
-.product-card{
-min-width:240px;background:white;border-radius:18px;overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,.1);scroll-snap-align:start
+
+/* HOME */
+#home {
+    height: 100vh;
+    background: linear-gradient(to right, #0f0f14, #1c1c28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
-.product-card img{width:100%;height:200px;object-fit:cover}
-.product-card .box{padding:15px}
-.price{color:#c47a00;font-weight:600}
 
-/* all products */
-.all-products{display:none;margin-top:40px}
-.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
-.card{background:white;border-radius:18px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.1)}
-.card img{width:100%;height:220px;object-fit:cover}
-.card .box{padding:16px}
+#home h1 {
+    font-size: 48px;
+    color: #ffb703;
+}
 
-/* ORDER */
-.order-box{max-width:650px;margin:auto;background:white;padding:40px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.1);text-align:center}
+#home p {
+    margin-top: 15px;
+    color: #ccc;
+}
 
-/* FOOTER */
-footer{background:#2b1b12;color:white;text-align:center;padding:25px;margin-top:60px}
+/* KATALOG */
+#catalog h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #ffb703;
+}
+
+/* SLIDER */
+.slider-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.6s ease;
+}
+
+.product {
+    min-width: 280px;
+    background: #1c1c28;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(255,183,3,0.2);
+}
+
+.product img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product .info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product h4 {
+    color: #ffb703;
+}
+
+.see-all {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.see-all button {
+    background: #ffb703;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* TENTANG */
+#about h2 {
+    text-align: center;
+    color: #ffb703;
+    margin-bottom: 30px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.about p {
+    line-height: 1.8;
+    color: #ddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .about {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
-<h2>Brownies UMKM</h2>
-<div class="menu" id="menu">
+<h2>Argani</h2>
+<div>
 <a href="#home">Home</a>
+<a href="#catalog">Katalog</a>
 <a href="#about">Tentang</a>
-<a href="#produk">Produk</a>
-<a href="#order">Pemesanan</a>
-<a href="#kontak">Kontak</a>
 </div>
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
 </nav>
 
 <!-- HOME -->
-<div class="hero" id="home">
-<div class="slider">
-<img src="brownies1.jpg" class="active">
-<img src="brownies2.jpg">
-<img src="brownies3.jpg">
-<img src="brownies4.jpg">
-<img src="brownies5.jpg">
-</div>
-
-<div class="hero-content">
+<section id="home">
 <div>
-<h1>Brownies Premium Homemade</h1>
-<p>Brownies padat, lembut, dan kaya cokelat. Cocok untuk camilan dan hadiah.</p>
-<a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan Sekarang</a>
+<h1>Argani Brownies</h1>
+<p>Brownies rumahan premium dengan cita rasa khas dan kualitas terbaik.</p>
+</div>
+</section>
+
+<!-- KATALOG -->
+<section id="catalog">
+<h2>Katalog Produk</h2>
+
+<div class="slider-wrapper">
+<div class="slider" id="slider">
+
+<div class="product">
+<img src="produk1.jpg">
+<div class="info">
+<h4>Brownies Original</h4>
+<p>Lembut, legit, coklat pekat.</p>
 </div>
 </div>
 
-<div class="nav-slider">
-<span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+<div class="product">
+<img src="produk2.jpg">
+<div class="info">
+<h4>Brownies Keju</h4>
+<p>Taburan keju melimpah.</p>
 </div>
 </div>
+
+<div class="product">
+<img src="produk3.jpg">
+<div class="info">
+<h4>Brownies Kacang</h4>
+<p>Renyaah dan gurih.</p>
+</div>
+</div>
+
+<div class="product">
+<img src="produk4.jpg">
+<div class="info">
+<h4>Brownies Coklat Lumer</h4>
+<p>Isi coklat meleleh.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="see-all">
+<button>Lihat Semua Produk</button>
+</div>
+</section>
 
 <!-- TENTANG -->
 <section id="about">
-<div class="title"><h2>Tentang Kami</h2></div>
+<h2>Tentang Kami</h2>
+
 <div class="about">
 <div>
-<p><b>Brownies UMKM</b> adalah usaha rumahan yang memproduksi brownies padat premium dari dapur sendiri dengan fokus kualitas dan rasa.</p>
-<ul style="margin-top:10px;line-height:1.8">
-<li>✔ Homemade</li>
-<li>✔ Bahan berkualitas</li>
-<li>✔ Tekstur padat & lembut</li>
-<li>✔ Banyak varian</li>
-</ul>
-<p style="margin-top:15px"><b>Jam Operasional:</b><br>Senin – Sabtu (08.00 – 20.00 WIB)</p>
-<p><b>WhatsApp:</b> 0852-1691-9157</p>
+<p><b>Argani Brownies</b> adalah brand brownies rumahan yang lahir dari dapur kecil dengan mimpi besar: menghadirkan brownies berkualitas premium dengan rasa yang konsisten dan memuaskan.</p>
+
+<p>Usaha ini bermula dari produksi rumahan, dikerjakan dengan proses yang higienis, bahan pilihan, serta kontrol rasa yang ketat agar setiap produk memiliki standar kualitas yang sama.</p>
+
+<p><b>Keunggulan utama kami</b> terletak pada tekstur brownies yang padat namun lembut, rasa cokelat yang kuat, serta varian topping yang dibuat seimbang tanpa menghilangkan cita rasa asli brownies.</p>
+
+<p>Kami berfokus pada kualitas dan rasa, bukan sekadar produksi massal. Setiap brownies dibuat dengan perhatian pada detail, mulai dari pemilihan bahan, proses pemanggangan, hingga pengemasan.</p>
+
+<p>Dengan hadirnya platform digital ini, Argani Brownies berharap dapat menjangkau lebih banyak pelanggan, membangun kepercayaan, dan tumbuh menjadi UMKM yang berdaya saing.</p>
+
+<p><b>Jam Operasional:</b><br>Senin – Sabtu (08.00 – 20.00 WIB)</p>
+<p><b>Kontak:</b><br>WhatsApp: 0852-1691-9157</p>
 </div>
+
 <img src="tentang.jpg">
 </div>
 </section>
 
-<!-- PRODUK -->
-<section id="produk">
-<div class="title"><h2>Katalog Produk</h2></div>
-
-<!-- SLIDER PREVIEW -->
-<div class="product-slider">
-<div class="product-card"><img src="produk1.jpg"><div class="box"><h3>Brownies Original</h3><p class="price">Rp 25.000</p></div></div>
-<div class="product-card"><img src="produk2.jpg"><div class="box"><h3>Brownies Keju</h3><p class="price">Rp 30.000</p></div></div>
-<div class="product-card"><img src="produk3.jpg"><div class="box"><h3>Brownies Kacang</h3><p class="price">Rp 30.000</p></div></div>
-<div class="product-card"><img src="produk4.jpg"><div class="box"><h3>Choco Chips</h3><p class="price">Rp 32.000</p></div></div>
-</div>
-
-<div style="text-align:center;margin-top:25px">
-<a class="btn" onclick="showAll()">See All Products</a>
-</div>
-
-<!-- ALL PRODUCTS -->
-<div class="all-products" id="allProducts">
-<div class="products-grid">
-<div class="card"><img src="produk1.jpg"><div class="box"><h3>Brownies Original</h3><p class="price">Rp 25.000</p></div></div>
-<div class="card"><img src="produk2.jpg"><div class="box"><h3>Brownies Keju</h3><p class="price">Rp 30.000</p></div></div>
-<div class="card"><img src="produk3.jpg"><div class="box"><h3>Brownies Kacang</h3><p class="price">Rp 30.000</p></div></div>
-<div class="card"><img src="produk4.jpg"><div class="box"><h3>Choco Chips</h3><p class="price">Rp 32.000</p></div></div>
-<div class="card"><img src="produk5.jpg"><div class="box"><h3>Brownies Lumer</h3><p class="price">Rp 35.000</p></div></div>
-<div class="card"><img src="produk6.jpg"><div class="box"><h3>Matcha</h3><p class="price">Rp 32.000</p></div></div>
-<div class="card"><img src="produk7.jpg"><div class="box"><h3>Tiramisu</h3><p class="price">Rp 33.000</p></div></div>
-<div class="card"><img src="produk8.jpg"><div class="box"><h3>Special Box</h3><p class="price">Rp 50.000</p></div></div>
-</div>
-</div>
-</section>
-
-<!-- ORDER -->
-<section id="order">
-<div class="title"><h2>Sistem Pemesanan</h2></div>
-<div class="order-box">
-<p>Pesan langsung lewat WhatsApp</p>
-<a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan Sekarang</a>
-</div>
-</section>
-
-<!-- KONTAK -->
-<section id="kontak">
-<div class="title"><h2>Kontak</h2></div>
-<p style="text-align:center">WhatsApp: 0852-1691-9157</p>
-</section>
-
-<footer>© 2026 Digitalisasi UMKM – Brownies</footer>
-
 <script>
-let slides=document.querySelectorAll(".slider img");
-let dots=document.querySelectorAll(".dot");
-let i=0;
-setInterval(()=>{slides[i].classList.remove("active");dots[i].classList.remove("active");i=(i+1)%slides.length;slides[i].classList.add("active");dots[i].classList.add("active");},4000);
+const slider = document.getElementById("slider");
+let index = 0;
 
-function toggleMenu(){document.getElementById("menu").classList.toggle("active")}
-function showAll(){document.getElementById("allProducts").style.display="block"}
+function autoSlide(){
+    index++;
+    if(index > slider.children.length - 2){
+        index = 0;
+    }
+    slider.style.transform = "translateX(" + (-index * 310) + "px)";
+}
+
+setInterval(autoSlide, 2500);
 </script>
 
 </body>
