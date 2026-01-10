@@ -7,144 +7,144 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brownies UMKM</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
-body{background:#fffaf4;color:#3b2a1a}
+body{background:#faf7f2;color:#3a2a1a}
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 nav{
 position:fixed;
-top:0;left:0;width:100%;
-padding:14px 8%;
+top:0;left:0;
+width:100%;
+background:rgba(43,27,18,.95);
+padding:12px 6%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(255,250,244,0.9);
-backdrop-filter:blur(10px);
 z-index:999;
-box-shadow:0 2px 15px rgba(0,0,0,.05)
 }
-nav h2{color:#c48a3a;font-weight:700}
-nav .menu{display:flex;gap:25px}
-nav a{text-decoration:none;color:#3b2a1a;font-weight:500}
-nav a:hover{color:#c48a3a}
+nav h2{color:#f3c892}
+nav .menu{display:flex;gap:20px}
+nav a{color:white;text-decoration:none;font-weight:500;font-size:15px}
+nav a:hover{color:#f3c892}
 
-.menu-toggle{display:none;font-size:26px;cursor:pointer}
+/* MOBILE NAV */
+.menu-btn{display:none;color:white;font-size:22px;cursor:pointer}
 
-/* ================= HERO ================= */
-.hero{
-min-height:100vh;
-position:relative;
-display:flex;
+@media(max-width:768px){
+nav .menu{
+position:absolute;
+top:60px;left:0;
+background:#2b1b12;
+width:100%;
+flex-direction:column;
 align-items:center;
-justify-content:center;
-text-align:center;
+display:none;
+padding:20px 0;
+}
+nav .menu.active{display:flex}
+.menu-btn{display:block}
+}
+
+/* HERO SLIDER */
+.hero{
+margin-top:65px;
+position:relative;
+width:100%;
+height:100vh;
 overflow:hidden;
 }
 
-.slider-container{
-position:absolute;
-top:0;left:0;width:100%;height:100%;
-}
-
 .slider img{
-position:absolute;
-width:100%;height:100%;
+width:100%;
+height:100vh;
 object-fit:cover;
+position:absolute;
 opacity:0;
-transition:1s;
-filter:brightness(65%);
+transition:opacity 1s ease-in-out;
 }
-
 .slider img.active{opacity:1}
 
-.hero-text{
-position:relative;
-z-index:2;
-max-width:800px;
-padding:20px;
+/* HERO OVERLAY */
+.hero-content{
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+background:linear-gradient(to top, rgba(43,27,18,.65), rgba(0,0,0,.2));
+display:flex;
+align-items:center;
+padding:0 8%;
 color:white;
 }
 
-.hero-text h1{font-size:52px;font-weight:700}
-.hero-text p{margin:20px 0;font-size:18px}
+.hero-content h1{font-size:48px;color:#ffd8a8}
+.hero-content p{max-width:550px;margin:18px 0}
 
 .btn{
 display:inline-block;
-background:linear-gradient(135deg,#f3c77a,#c48a3a);
-color:white;
-padding:12px 32px;
+background:#ffd8a8;
+color:#2b1b12;
+padding:12px 28px;
 border-radius:30px;
 font-weight:600;
 text-decoration:none;
 transition:.3s;
 }
-.btn:hover{transform:scale(1.05)}
+.btn:hover{background:white}
 
-.dots{
+/* DOT */
+.nav-slider{
 position:absolute;
 bottom:25px;
-left:50%;
-transform:translateX(-50%);
-display:flex;
-gap:10px;
-z-index:3;
+width:100%;
+text-align:center;
 }
 .dot{
-width:12px;height:12px;border-radius:50%;
-background:white;opacity:.4;cursor:pointer
+display:inline-block;
+width:10px;height:10px;
+margin:0 4px;
+background:#fff;
+border-radius:50%;
+opacity:.4;
+cursor:pointer;
 }
-.dot.active{opacity:1;background:#f3c77a}
+.dot.active{opacity:1;background:#ffd8a8}
 
-/* ================= SECTION ================= */
-section{padding:100px 8%}
-.title{text-align:center;margin-bottom:50px}
-.title h2{font-size:36px;color:#c48a3a}
+/* SECTION */
+section{padding:90px 8%}
+.title{text-align:center;margin-bottom:45px}
+.title h2{font-size:34px}
 
-/* ================= ABOUT ================= */
-.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;align-items:center}
-.about img{width:100%;border-radius:25px}
+/* ABOUT */
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:35px;align-items:center}
+.about img{width:100%;border-radius:20px}
 
-/* ================= PRODUCTS ================= */
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px}
-
+/* PRODUCTS */
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px}
 .card{
-background:white;
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.3s;
+background:white;border-radius:18px;overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.3s
 }
-.card:hover{transform:translateY(-8px)}
+.card:hover{transform:translateY(-6px)}
 .card img{width:100%;height:220px;object-fit:cover}
-.card .box{padding:18px;text-align:center}
-.price{color:#c48a3a;font-weight:600;margin:8px 0}
+.card .box{padding:16px}
+.price{color:#c47a00;font-weight:600}
 
-/* ================= ORDER ================= */
+/* ORDER */
 .order-box{
-max-width:700px;margin:auto;
-background:white;padding:45px;
-border-radius:25px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-text-align:center;
+max-width:650px;margin:auto;
+background:white;padding:40px;border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+text-align:center
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer{
-background:#f3e4cf;
-color:#3b2a1a;
-text-align:center;
-padding:25px;
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:768px){
-.hero-text h1{font-size:34px}
-nav .menu{display:none;flex-direction:column;position:absolute;top:60px;right:8%;background:white;padding:20px;border-radius:15px;box-shadow:0 10px 20px rgba(0,0,0,.1)}
-nav .menu.active{display:flex}
-.menu-toggle{display:block}
+background:#2b1b12;color:white;text-align:center;
+padding:25px;margin-top:60px
 }
 </style>
 </head>
@@ -156,18 +156,17 @@ nav .menu.active{display:flex}
 <h2>Brownies UMKM</h2>
 <div class="menu" id="menu">
 <a href="#home">Home</a>
-<a href="#about">Tentang Kami</a>
+<a href="#about">Tentang</a>
 <a href="#produk">Produk</a>
 <a href="#order">Pemesanan</a>
 <a href="#kontak">Kontak</a>
 </div>
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 </nav>
 
 <!-- HOME -->
 <div class="hero" id="home">
 
-<div class="slider-container">
 <div class="slider">
 <img src="brownies1.jpg" class="active">
 <img src="brownies2.jpg">
@@ -176,23 +175,21 @@ nav .menu.active{display:flex}
 <img src="brownies5.jpg">
 </div>
 
-<div class="dots">
+<div class="hero-content">
+<div>
+<h1>Brownies Premium Homemade</h1>
+<p>Brownies padat, lembut, dan kaya coklat. Cocok untuk camilan, hadiah, dan berbagai momen spesial.</p>
+<a class="btn" target="_blank" href="https://wa.me/6285216919157?text=Halo%20saya%20ingin%20memesan%20brownies">Pesan Sekarang</a>
+</div>
+</div>
+
+<div class="nav-slider">
 <span class="dot active"></span>
 <span class="dot"></span>
 <span class="dot"></span>
 <span class="dot"></span>
 <span class="dot"></span>
 </div>
-</div>
-
-<div class="hero-text">
-<h1>Brownies Premium Homemade</h1>
-<p>Kami menghadirkan brownies padat dan lembut dengan bahan berkualitas, rasa coklat khas, cocok untuk camilan dan hadiah.</p>
-<a class="btn" target="_blank"
-href="https://wa.me/6285216919157?text=Halo%20saya%20ingin%20memesan%20brownies">
-Pesan Sekarang</a>
-</div>
-
 </div>
 
 <!-- TENTANG -->
@@ -214,18 +211,14 @@ Pesan Sekarang</a>
 <div class="title"><h2>Katalog Produk</h2></div>
 
 <div class="products">
-
-<!-- PRODUK 1 - 8 -->
-<!-- GANTI FOTO SAJA -->
-<div class="card"><img src="produk1.jpg"><div class="box"><h3>Brownies Original Padat</h3><p class="price">Rp 25.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
+<div class="card"><img src="produk1.jpg"><div class="box"><h3>Brownies Original</h3><p class="price">Rp 25.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
 <div class="card"><img src="produk2.jpg"><div class="box"><h3>Brownies Keju</h3><p class="price">Rp 30.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
 <div class="card"><img src="produk3.jpg"><div class="box"><h3>Brownies Kacang</h3><p class="price">Rp 30.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
-<div class="card"><img src="produk4.jpg"><div class="box"><h3>Brownies Choco Chips</h3><p class="price">Rp 32.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
+<div class="card"><img src="produk4.jpg"><div class="box"><h3>Choco Chips</h3><p class="price">Rp 32.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
 <div class="card"><img src="produk5.jpg"><div class="box"><h3>Brownies Lumer</h3><p class="price">Rp 35.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
-<div class="card"><img src="produk6.jpg"><div class="box"><h3>Brownies Matcha</h3><p class="price">Rp 32.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
-<div class="card"><img src="produk7.jpg"><div class="box"><h3>Brownies Tiramisu</h3><p class="price">Rp 33.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
+<div class="card"><img src="produk6.jpg"><div class="box"><h3>Matcha</h3><p class="price">Rp 32.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
+<div class="card"><img src="produk7.jpg"><div class="box"><h3>Tiramisu</h3><p class="price">Rp 33.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
 <div class="card"><img src="produk8.jpg"><div class="box"><h3>Special Box</h3><p class="price">Rp 50.000</p><a class="btn" target="_blank" href="https://wa.me/6285216919157">Pesan</a></div></div>
-
 </div>
 </section>
 
@@ -233,7 +226,7 @@ Pesan Sekarang</a>
 <section id="order">
 <div class="title"><h2>Sistem Pemesanan</h2></div>
 <div class="order-box">
-<p>Pemesanan dilakukan secara online melalui WhatsApp.</p>
+<p>Pemesanan dilakukan melalui WhatsApp.</p>
 <p><b>Format:</b> Nama / Produk / Jumlah / Alamat</p>
 <a class="btn" target="_blank"
 href="https://wa.me/6285216919157?text=Halo%20saya%20ingin%20memesan:%0ANama:%0AProduk:%0AJumlah:%0AAlamat:">
