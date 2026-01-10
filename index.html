@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brownies CHOCO - Premium</title>
@@ -111,6 +112,62 @@
     }
     .search-container {
         max-width: none; /* Lebar penuh di HP */
+    }
+}
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Menjaga ukuran elemen tetap stabil */
+}
+
+body {
+    overflow-x: hidden; /* Mencegah layar goyang ke samping */
+    width: 100%;
+}
+
+/* Membuat gambar agar tidak melewati batas layar */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mengatur Header agar selalu proporsional */
+header {
+    width: 100%;
+    display: block;
+}
+
+/* Mengatur Search Wrapper agar lebarnya pas di semua layar */
+.search-wrapper {
+    width: 100%;
+    padding: 20px 5%;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 800px; /* Lebar maksimal di laptop */
+    margin: 0 auto; /* Supaya tetap di tengah */
+}
+
+/* RESPONSIVE: Pengaturan khusus untuk HP agar tidak kekecilan */
+@media (max-width: 768px) {
+    .bottom-nav {
+        gap: 15px; /* Jarak menu lebih rapat di HP */
+        flex-wrap: wrap; /* Menu turun ke bawah jika tidak muat */
+        justify-content: center;
+    }
+    
+    .bottom-nav a {
+        font-size: 13px; /* Tulisan menu sedikit mengecil agar pas */
+    }
+
+    .search-container {
+        padding: 5px 5px 5px 15px; /* Padding lebih kecil di HP */
+    }
+    
+    button[onclick="searchProduct()"] {
+        padding: 10px 15px; /* Tombol cari lebih ramping di HP */
+        font-size: 13px;
     }
 }
     </style>
