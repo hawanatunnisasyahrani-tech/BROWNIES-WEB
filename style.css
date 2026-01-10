@@ -78,7 +78,7 @@ nav a:hover{ color:#ffd8a8; }
 }
 .hero-text{
   position:absolute;
-  color:#ffd8a8;
+  color:white;
   text-align:center;
   max-width:600px;
   z-index:2;
@@ -135,4 +135,3 @@ footer{
 @media(max-width:768px){
   .product-cards{ flex-direction:column; align-items:center; }
 }
-
