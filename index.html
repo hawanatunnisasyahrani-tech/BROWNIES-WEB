@@ -9,6 +9,32 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
+        /* Pastikan teks di dalam modal memiliki kontras yang baik */
+#modalDesc {
+    color: #eeeeee !important; /* Warna abu-abu sangat terang mendekati putih */
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+#modalTitle {
+    color: #ffffff !important; /* Judul putih agar menonjol */
+}
+
+#modalPrice {
+    color: #c6955b !important; /* Warna gold agar tetap senada dengan tema */
+}
+
+/* Penyesuaian khusus untuk Mobile agar teks tidak tenggelam */
+@media (max-width: 768px) {
+    .modal-content {
+        background: #1a1a1a; /* Latar belakang modal dibuat gelap sekalian agar elegan */
+    }
+    
+    .modal-content div {
+        padding: 20px !important;
+    }
+}
     :root {
         --primary: #3d2522;
         --secondary: #c6955b;
@@ -377,13 +403,19 @@
 
 <div id="productModal" class="modal">
     <div class="modal-content">
-        <span onclick="closeModal()" style="position: absolute; right: 20px; top: 10px; font-size: 30px; cursor: pointer; z-index: 10;">&times;</span>
-        <div style="flex: 1; min-height: 250px;"><img id="modalImg" src="" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div style="flex: 1; padding: 30px; display: flex; flex-direction: column; justify-content: center;">
-            <h2 id="modalTitle" style="color: var(--primary); margin-bottom: 5px;"></h2>
-            <p id="modalPrice" style="font-size: 24px; color: var(--secondary); font-weight: 800; margin-bottom: 15px;"></p>
-            <p id="modalDesc" style="color: #666; line-height: 1.6; margin-bottom: 25px; font-size: 14px;"></p>
-            <a id="modalWA" href="#" target="_blank" style="display: block; background: #25d366; color: white; text-align: center; padding: 12px; border-radius: 50px; text-decoration: none; font-weight: bold;">ORDER VIA WHATSAPP</a>
+        <span onclick="closeModal()" style="position: absolute; right: 20px; top: 10px; font-size: 30px; cursor: pointer; color: white; z-index: 100;">&times;</span>
+        
+        <div style="flex: 1; background: #fff;">
+            <img id="modalImg" src="" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        
+        <div style="flex: 1; padding: 30px; background: #1a1a1a; display: flex; flex-direction: column; justify-content: center;">
+            <h2 id="modalTitle" style="font-family: 'Lora', serif; margin-bottom: 10px;"></h2>
+            <p id="modalPrice" style="font-size: 24px; font-weight: 800; margin-bottom: 15px;"></p>
+            
+            <p id="modalDesc"></p> 
+            
+            <a id="modalWA" href="#" target="_blank" style="display: block; background: #25d366; color: white; text-align: center; padding: 12px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 10px;">ORDER SEKARANG</a>
         </div>
     </div>
 </div>
