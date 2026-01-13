@@ -40,33 +40,33 @@
         nav a:hover { color: var(--secondary); border-bottom-color: var(--secondary); }
 
         /* Update CSS Hero agar gambar muncul sempurna */
-.hero { 
-    margin-top: 145px; 
-    height: 80vh; 
-    position: relative; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center; 
-    color: white; 
-    overflow: hidden; 
-}
+        .hero { 
+            margin-top: 145px; 
+            height: 80vh; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: white; 
+            overflow: hidden; 
+        }
 
-.hero-img { 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    z-index: 1; 
-}
+        .hero-img { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            z-index: 1; 
+        }
 
-.hero-content { 
-    position: relative; 
-    z-index: 3; /* Pastikan konten di atas gambar dan overlay */
-    max-width: 800px; 
-}
+        .hero-content { 
+            position: relative; 
+            z-index: 3; 
+            max-width: 800px; 
+        }
         /* CARDS */
         .section-title { text-align: center; margin-bottom: 40px; font-family: 'Lora', serif; font-size: 32px; color: var(--primary); }
         .katalog-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%; }
@@ -130,52 +130,57 @@
     🛒 <span class="cart-badge" id="cartCount">0</span>
 </button>
 
-<section id="home" class="hero">
-    <img src="produk12.jpg" alt="Browniesta Hero Image" class="hero-img" 
-         onerror="this.src='https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=1974&auto=format&fit=crop';">
-    
-    <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)); z-index: 2;"></div>
+<main>
+    <section id="home" class="hero">
+        <img src="produk12.jpg" alt="Browniesta Hero Image" class="hero-img" 
+             onerror="this.src='https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=1974&auto=format&fit=crop';">
+        
+        <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)); z-index: 2;"></div>
 
-    <div class="hero-content" data-aos="zoom-in">
-        <h1 style="color: white; text-shadow: 2px 4px 20px rgba(0,0,0,0.6);">Browniesta.co</h1>
-        <p style="font-size: clamp(16px, 4vw, 22px); opacity: 0.95; margin-bottom: 35px; text-shadow: 1px 2px 10px rgba(0,0,0,0.5); font-weight: 500; color: #fff;">
-            Premium Homemade Brownies - Rasakan kebahagiaan di setiap gigitan! ✨
-        </p>
-        <a href="#produk" style="background: var(--secondary); color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 800; display: inline-block; transition: 0.3s; box-shadow: 0 10px 30px rgba(198, 149, 91, 0.4); text-transform: uppercase; letter-spacing: 1px;">
-            BELI SEKARANG
-        </a>
-    </div>
-</section>
-    <section id="tentangkami" style="padding: 80px 5%; background: #fff;">
-    <div class="info-grid" style="align-items: center;">
-        <div class="info-card" data-aos="fade-right" style="padding: 0; overflow: hidden; border: none; box-shadow: none;">
-            <img src="produk11.jpg" alt="Pembuatan Browniesta" 
-                 style="width: 100%; height: 450px; object-fit: cover; border-radius: 30px; box-shadow: var(--shadow);">
+        <div class="hero-content" data-aos="zoom-in">
+            <h1 style="color: white; text-shadow: 2px 4px 20px rgba(0,0,0,0.6);">Browniesta.co</h1>
+            <p style="font-size: clamp(16px, 4vw, 22px); opacity: 0.95; margin-bottom: 35px; text-shadow: 1px 2px 10px rgba(0,0,0,0.5); font-weight: 500; color: #fff;">
+                Premium Homemade Brownies - Rasakan kebahagiaan di setiap gigitan! ✨
+            </p>
+            <a href="#produk" style="background: var(--secondary); color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 800; display: inline-block; transition: 0.3s; box-shadow: 0 10px 30px rgba(198, 149, 91, 0.4); text-transform: uppercase; letter-spacing: 1px;">
+                BELI SEKARANG
+            </a>
         </div>
+    </section>
 
-        <div class="about-text" data-aos="fade-left" style="padding: 20px;">
-            <h4 style="color: var(--secondary); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 14px; margin-bottom: 10px;">Cerita Kami</h4>
-            <h2 style="font-family: 'Lora', serif; font-size: clamp(28px, 5vw, 40px); color: var(--primary); line-height: 1.2; margin-bottom: 25px;">
-                Dibuat dengan Hati, Disajikan dengan Cinta.
-            </h2>
-            <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 20px; text-align: justify;">
-                Berawal dari dapur rumah di Bogor, <strong>Browniesta.co</strong> lahir dari keinginan untuk menghadirkan camilan yang tidak hanya manis, tapi juga memberikan kehangatan di setiap gigitannya.
-            </p>
-            <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 30px; text-align: justify;">
-                Kami percaya bahwa bahan-bahan premium adalah kunci utama. Itulah mengapa kami hanya menggunakan cokelat pilihan dan resep asli <i>homemade</i> tanpa bahan pengawet, demi menjaga kualitas "Fudgy" yang sempurna untuk Anda.
-            </p>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <div style="background: var(--bg-light); padding: 15px; border-radius: 15px; border-left: 4px solid var(--secondary);">
-                    <h5 style="color: var(--primary); margin-bottom: 5px;">100% Halal</h5>
-                    <p style="font-size: 12px; color: var(--text-muted);">Bahan pilihan terjamin.</p>
+    <section id="tentangkami" style="padding: 80px 5%; background: #fff;">
+        <div class="info-grid" style="align-items: center;">
+            <div class="info-card" data-aos="fade-right" style="padding: 0; overflow: hidden; border: none; box-shadow: none;">
+                <img src="produk11.jpg" alt="Pembuatan Browniesta" 
+                     style="width: 100%; height: 450px; object-fit: cover; border-radius: 30px; box-shadow: var(--shadow);">
+            </div>
+
+            <div class="about-text" data-aos="fade-left" style="padding: 20px;">
+                <h4 style="color: var(--secondary); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 14px; margin-bottom: 10px;">Cerita Kami</h4>
+                <h2 style="font-family: 'Lora', serif; font-size: clamp(28px, 5vw, 40px); color: var(--primary); line-height: 1.2; margin-bottom: 25px;">
+                    Dibuat dengan Hati, Disajikan dengan Cinta.
+                </h2>
+                <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 20px; text-align: justify;">
+                    Berawal dari dapur rumah di Bogor, <strong>Browniesta.co</strong> lahir dari keinginan untuk menghadirkan camilan yang tidak hanya manis, tapi juga memberikan kehangatan di setiap gigitannya.
+                </p>
+                <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 30px; text-align: justify;">
+                    Kami percaya bahwa bahan-bahan premium adalah kunci utama. Itulah mengapa kami hanya menggunakan cokelat pilihan dan resep asli <i>homemade</i> tanpa bahan pengawet, demi menjaga kualitas "Fudgy" yang sempurna untuk Anda.
+                </p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div style="background: var(--bg-light); padding: 15px; border-radius: 15px; border-left: 4px solid var(--secondary);">
+                        <h5 style="color: var(--primary); margin-bottom: 5px;">100% Halal</h5>
+                        <p style="font-size: 12px; color: var(--text-muted);">Bahan pilihan terjamin.</p>
+                    </div>
+                    <div style="background: var(--bg-light); padding: 15px; border-radius: 15px; border-left: 4px solid var(--secondary);">
+                        <h5 style="color: var(--primary); margin-bottom: 5px;">Freshly Baked</h5>
+                        <p style="font-size: 12px; color: var(--text-muted);">Dibuat setiap hari.</p>
+                    </div>
                 </div>
-                <div style="background: var(--bg-light); padding: 15px; border-radius: 15px; border-left: 4px solid var(--secondary);">
-                    <h5 style="color: var(--primary); margin-bottom: 5px;">Freshly Baked</h5>
-                    <p style="font-size: 12px; color: var(--text-muted);">Dibuat setiap hari.</p>
-                </div>
-    </div>
-</section>
+            </div>
+        </div>
+    </section>
+
     <section id="produk">
         <h2 class="section-title">Menu Favorit</h2>
         <div class="katalog-container">
@@ -241,7 +246,7 @@
         </div>
     </section>
 
-    <section id="kontak" style="text-align: center; background: var(--primary); color: white;">
+    <section id="kontak" style="text-align: center; background: var(--primary); color: white; padding: 60px 5%;">
         <h2 class="section-title" style="color: white;">Hubungi Kami</h2>
         <p style="opacity: 0.8; margin-bottom: 20px;">Punya pertanyaan atau pesanan khusus?</p>
         <p style="font-size: 18px; font-weight: 600;">📧 browniesta.co@gmail.com</p>
@@ -251,7 +256,7 @@
 
 <div id="cartModal" class="modal">
     <div class="modal-content">
-        <span onclick="closeCart()" style="position: absolute; right: 25px; top: 20px; font-size: 28px; cursor: pointer;">&times;</span>
+        <span onclick="closeCart()" style="position: absolute; right: 25px; top: 20px; font-size: 28px; cursor: pointer;">×</span>
         <h2 style="font-family: 'Lora', serif; margin-bottom: 20px;">Keranjang Saya</h2>
         <div id="cartItemsList"></div>
         <div style="margin-top: 25px; border-top: 2px dashed #eee; padding-top: 20px;">
@@ -260,7 +265,7 @@
                 <span id="totalPrice" style="color: var(--secondary);">Rp 0</span>
             </div>
         </div>
-        <button class="btn-checkout" onclick="checkoutWA()" style="background: #25d366; cursor: pointer; border: none; font-family: inherit; width: 100%;">
+        <button class="btn-checkout" onclick="checkoutWA()" style="background: #25d366; cursor: pointer; border: none; font-family: inherit; width: 100%; color: white; padding: 15px; border-radius: 10px; margin-top: 20px; font-weight: bold;">
             💬 Pesan Sekarang via WA
         </button>
     </div>
@@ -274,8 +279,6 @@
     function addToCart(name, price) {
         cart.push({ name, price });
         updateCartUI();
-        
-        // Animasi feedback kecil
         const badge = document.getElementById('cartCount');
         badge.style.transform = 'scale(1.4)';
         setTimeout(() => badge.style.transform = 'scale(1)', 200);
