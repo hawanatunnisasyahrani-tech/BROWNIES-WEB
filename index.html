@@ -108,6 +108,30 @@
         .modal-content { background: white; width: 95%; max-width: 450px; margin: 5vh auto; border-radius: 25px; padding: 30px; position: relative; max-height: 90vh; overflow-y: auto; }
         .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #f5f5f5; }
         
+        /* --- PERBAIKAN KHUSUS TOMBOL WA (LEBIH GEDE) --- */
+        .btn-checkout { 
+            background: #25d366; 
+            cursor: pointer; 
+            border: none; 
+            font-family: inherit; 
+            width: 100%; 
+            color: white; 
+            padding: 20px 15px; /* Padding ditambah agar lebih tebal */
+            border-radius: 15px; 
+            margin-top: 25px; 
+            font-weight: 800; /* Font lebih tebal */
+            font-size: 18px; /* Ukuran tulisan diperbesar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            min-height: 65px; /* Tinggi minimal dikunci agar tidak gepeng */
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+            transition: 0.3s;
+        }
+        .btn-checkout:active { transform: scale(0.98); }
+        /* --------------------------------------------- */
+        
         @media (min-width: 769px) {
             .navbar-main { flex-direction: row; justify-content: space-between; padding: 15px 8%; }
             nav { justify-content: center; padding: 5px 0; flex-wrap: nowrap; gap: 25px; }
@@ -280,8 +304,8 @@
                 <span id="totalPrice" style="color: var(--secondary);">Rp 0</span>
             </div>
         </div>
-        <button class="btn-checkout" onclick="checkoutWA()" style="background: #25d366; cursor: pointer; border: none; font-family: inherit; width: 100%; color: white; padding: 15px; border-radius: 10px; margin-top: 20px; font-weight: bold;">
-            💬 Pesan Sekarang via WA
+        <button class="btn-checkout" onclick="checkoutWA()">
+            <span>💬</span> Pesan Sekarang via WA
         </button>
     </div>
 </div>
