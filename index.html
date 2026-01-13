@@ -24,45 +24,40 @@
         html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; width: 100%; position: relative; }
         
-        /* HEADER & NAVBAR - FIXED MOBILE OVERFLOW */
+        /* HEADER & NAVBAR - PERBAIKAN TOTAL AGAR TIDAK KELUAR LAYAR */
         header { background: var(--white); width: 100%; position: fixed; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.05); }
         .top-info { background: var(--primary); color: var(--white); padding: 10px 5%; font-size: 11px; text-align: center; font-weight: 500; letter-spacing: 0.5px; width: 100%; }
         
-        .navbar-main { padding: 15px 5%; display: flex; flex-direction: column; align-items: center; gap: 15px; width: 100%; max-width: 100vw; }
+        .navbar-main { padding: 15px 5%; display: flex; flex-direction: column; align-items: center; gap: 15px; width: 100%; }
         .search-box { display: flex; width: 100%; max-width: 500px; background: #f5f5f5; border-radius: 12px; padding: 4px 4px 4px 15px; border: 1px solid #eee; transition: 0.3s; }
         .search-box:focus-within { background: #fff; border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(198, 149, 91, 0.1); }
         .search-box input { flex: 1; border: none; background: transparent; outline: none; font-size: 14px; font-family: inherit; }
         .search-box button { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 12px; }
 
-        /* NAV PERBAIKAN: Menggunakan overflow-x auto agar menu bisa di-swipe di HP */
+        /* NAV PERBAIKAN: Menggunakan flex-wrap agar menu turun ke bawah jika layar sempit */
         nav { 
             display: flex; 
-            gap: 20px; 
+            gap: 10px 15px; 
             width: 100%; 
-            max-width: 100%;
-            overflow-x: auto; 
-            padding: 5px 10px; 
-            justify-content: flex-start; 
-            scrollbar-width: none; 
-            -webkit-overflow-scrolling: touch; 
+            justify-content: center; 
+            flex-wrap: wrap; /* Ini kunci agar tulisan tidak keluar layar */
+            padding: 5px 0;
         }
-        nav::-webkit-scrollbar { display: none; }
         nav a { 
             text-decoration: none; 
             color: var(--text-dark); 
             font-weight: 600; 
-            font-size: 13px; 
+            font-size: 12px; 
             white-space: nowrap; 
             transition: 0.3s; 
-            padding: 5px 0; 
+            padding: 4px 2px; 
             border-bottom: 2px solid transparent; 
-            flex-shrink: 0; /* Menahan agar tulisan tidak gepeng */
         }
         nav a:hover { color: var(--secondary); border-bottom-color: var(--secondary); }
 
         /* HERO SECTION */
         .hero { 
-            margin-top: 155px; /* Ditambah sedikit agar tidak nabrak navbar di HP */
+            margin-top: 170px; /* Disesuaikan agar pas dengan navbar yang mungkin wrap */
             height: 80vh; 
             position: relative; 
             display: flex; 
@@ -90,7 +85,7 @@
             padding: 0 20px;
         }
 
-        /* CARDS & LAINNYA (TIDAK BERUBAH) */
+        /* CARDS & LAINNYA */
         .section-title { text-align: center; margin-bottom: 40px; font-family: 'Lora', serif; font-size: 32px; color: var(--primary); }
         .katalog-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%; }
         .card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid #f0f0f0; transition: 0.3s; position: relative; }
@@ -115,7 +110,7 @@
         
         @media (min-width: 769px) {
             .navbar-main { flex-direction: row; justify-content: space-between; padding: 15px 8%; }
-            nav { justify-content: center; padding: 5px 0; overflow-x: visible; }
+            nav { justify-content: center; padding: 5px 0; flex-wrap: nowrap; gap: 25px; }
             .katalog-container { grid-template-columns: repeat(4, 1fr); gap: 25px; }
             .card img { height: 220px; }
             .hero { height: 80vh; margin-top: 120px; }
