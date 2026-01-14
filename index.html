@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Browniesta.co - Sweet Bites, Happy Vibes!</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
         :root {
-            --primary: #3d2522;
-            --secondary: #c6955b;
-            --accent: #f4e9dc;
-            --bg-light: #fffcf9;
+            --primary: #2d1b19; /* Cokelat lebih gelap/elegan */
+            --secondary: #b5834a; /* Gold/Caramel */
+            --accent: #fdf6ec; /* Cream muda */
+            --bg-light: #ffffff;
             --white: #ffffff;
-            --text-dark: #2d2d2d;
-            --text-muted: #666666;
-            --shadow: 0 15px 35px rgba(61, 37, 34, 0.1);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --text-dark: #1a1a1a;
+            --text-muted: #555555;
+            --shadow-sm: 0 4px 12px rgba(45, 27, 25, 0.05);
+            --shadow-lg: 0 20px 40px rgba(45, 27, 25, 0.12);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         /* RESET & BASE */
@@ -29,31 +30,33 @@
             font-family: 'Inter', sans-serif; 
             background-color: var(--bg-light); 
             color: var(--text-dark); 
-            line-height: 1.6; 
+            line-height: 1.7; 
             overflow-x: hidden; 
             width: 100%; 
             position: relative;
-            padding-top: 160px; 
+            padding-top: 140px; 
         }
         
         /* HEADER & NAVBAR */
         header { 
-            background: rgba(255, 255, 255, 0.95); 
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             width: 100%; 
             position: fixed; 
             top: 0; 
             z-index: 1000; 
-            box-shadow: 0 4px 30px rgba(0,0,0,0.03); 
+            box-shadow: 0 1px 0 rgba(0,0,0,0.05); 
         }
+
         .top-info { 
             background: var(--primary); 
             color: var(--white); 
-            padding: 12px 5%; 
-            font-size: 12px; 
+            padding: 10px 5%; 
+            font-size: 11px; 
             text-align: center; 
-            font-weight: 600; 
-            letter-spacing: 1px; 
+            font-weight: 700; 
+            letter-spacing: 2px; 
             width: 100%; 
             text-transform: uppercase;
         }
@@ -66,240 +69,205 @@
             gap: 15px; 
             width: 100%; 
         }
+
         .search-box { 
             display: flex; 
             width: 100%; 
-            max-width: 500px; 
-            background: #f8f8f8; 
-            border-radius: 50px; 
-            padding: 5px 5px 5px 20px; 
-            border: 1px solid #eee; 
+            max-width: 450px; 
+            background: #f4f4f4; 
+            border-radius: 12px; 
+            padding: 4px 4px 4px 18px; 
+            border: 1px solid transparent; 
             transition: var(--transition); 
         }
+
         .search-box:focus-within { 
             background: #fff; 
             border-color: var(--secondary); 
-            box-shadow: 0 0 0 4px rgba(198, 149, 91, 0.1); 
+            box-shadow: 0 0 0 4px rgba(181, 131, 74, 0.1); 
         }
-        .search-box input { flex: 1; border: none; background: transparent; outline: none; font-size: 14px; font-family: inherit; }
+
+        .search-box input { flex: 1; border: none; background: transparent; outline: none; font-size: 14px; color: var(--text-dark); }
+        
         .search-box button { 
             background: var(--primary); 
             color: white; 
             border: none; 
-            padding: 10px 25px; 
-            border-radius: 50px; 
+            padding: 10px 22px; 
+            border-radius: 10px; 
             cursor: pointer; 
             font-weight: 700; 
-            font-size: 12px; 
+            font-size: 11px; 
+            letter-spacing: 1px;
             transition: var(--transition);
         }
-        .search-box button:hover { background: var(--secondary); }
 
         nav { 
             display: flex; 
-            gap: 5px 15px; 
+            gap: 20px; 
             width: 100%; 
             justify-content: center; 
             flex-wrap: wrap; 
-            padding: 5px 0;
         }
+
         nav a { 
             text-decoration: none; 
             color: var(--text-dark); 
             font-weight: 600; 
             font-size: 13px; 
-            white-space: nowrap; 
             transition: var(--transition); 
-            padding: 5px 10px; 
-            border-radius: 8px;
+            padding: 6px 4px;
+            position: relative;
         }
-        nav a:hover { color: var(--secondary); background: var(--accent); }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 0; height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav a:hover { color: var(--secondary); }
+        nav a:hover::after { width: 100%; }
 
         /* HERO SECTION */
         .hero { 
-            height: 75vh; 
+            height: 80vh; 
             position: relative; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             text-align: center; 
-            color: white; 
             overflow: hidden; 
-            border-radius: 0 0 40px 40px;
-            margin: 0 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 0 20px;
+            border-radius: 30px;
         }
 
         .hero-img { 
             position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
+            top: 0; left: 0; width: 100%; height: 100%; 
             object-fit: cover; 
             z-index: 1; 
-            transition: transform 5s ease;
+            transform: scale(1.05);
         }
-        .hero:hover .hero-img { transform: scale(1.1); }
 
         .hero-content { 
             position: relative; 
             z-index: 3; 
-            max-width: 800px; 
-            padding: 0 25px;
+            max-width: 700px; 
+            padding: 0 30px;
         }
 
         /* CARDS */
         .section-title { 
             text-align: center; 
-            margin-bottom: 50px; 
+            margin-bottom: 60px; 
             font-family: 'Lora', serif; 
-            font-size: clamp(32px, 5vw, 42px); 
+            font-size: clamp(28px, 6vw, 42px); 
             color: var(--primary); 
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--secondary);
-            margin: 15px auto;
-            border-radius: 2px;
         }
 
-        .katalog-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; width: 100%; padding: 0 5%; }
+        .katalog-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%; padding: 0 5%; }
         
         .card { 
             background: white; 
-            border-radius: 24px; 
+            border-radius: 20px; 
             overflow: hidden; 
-            border: 1px solid rgba(0,0,0,0.03); 
             transition: var(--transition); 
-            position: relative;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid #f0f0f0;
         }
-        .card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+
+        .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: transparent; }
+        
         .card img { width: 100%; height: 180px; object-fit: cover; transition: var(--transition); }
-        .card:hover img { transform: scale(1.05); }
         
         .card-body { padding: 20px; text-align: left; }
+        
         .card-body h3 { 
-            font-size: 16px; 
-            margin-bottom: 8px; 
+            font-size: 15px; 
+            margin-bottom: 6px; 
             color: var(--primary); 
-            height: 45px; 
-            overflow: hidden; 
-            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; 
             font-weight: 700;
+            line-height: 1.3;
         }
-        .price { color: var(--secondary); font-weight: 800; font-size: 18px; margin-bottom: 15px; display: block; }
+
+        .price { color: var(--secondary); font-weight: 800; font-size: 16px; margin-bottom: 15px; display: block; }
+
         .btn-cart { 
             width: 100%; 
-            padding: 14px; 
-            border-radius: 14px; 
-            border: none; 
-            background: var(--primary); 
-            color: white; 
+            padding: 12px; 
+            border-radius: 10px; 
+            border: 1.5px solid var(--primary); 
+            background: transparent; 
+            color: var(--primary); 
             font-weight: 700; 
-            font-size: 12px; 
+            font-size: 11px; 
             cursor: pointer; 
             transition: var(--transition); 
-            letter-spacing: 0.5px;
         }
-        .btn-cart:hover { background: var(--secondary); transform: scale(1.02); }
+
+        .btn-cart:hover { background: var(--primary); color: white; }
 
         /* INFO & SECTIONS */
-        .info-grid { display: grid; grid-template-columns: 1fr; gap: 25px; margin-top: 20px; padding: 0 5%; }
         .info-card { 
-            background: white; 
-            padding: 30px; 
+            background: var(--accent); 
+            padding: 40px; 
             border-radius: 24px; 
-            box-shadow: var(--shadow); 
-            border: 1px solid rgba(0,0,0,0.02); 
             transition: var(--transition);
         }
-        .map-container { width: 100%; height: 350px; border-radius: 24px; overflow: hidden; margin-top: 20px; border: 4px solid white; box-shadow: var(--shadow); }
+
+        .map-container { width: 100%; height: 350px; border-radius: 20px; overflow: hidden; margin-top: 20px; filter: grayscale(0.2); }
 
         .cart-trigger { 
             position: fixed; 
-            bottom: 30px; 
-            right: 30px; 
-            background: var(--secondary); 
+            bottom: 30px; right: 30px; 
+            background: var(--primary); 
             color: white; 
-            width: 65px; 
-            height: 65px; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            cursor: pointer; 
-            z-index: 999; 
-            box-shadow: 0 15px 35px rgba(198, 149, 91, 0.4); 
-            border: 3px solid white; 
-            font-size: 26px; 
+            width: 60px; height: 60px; 
+            border-radius: 20px; 
+            display: flex; align-items: center; justify-content: center; 
+            cursor: pointer; z-index: 999; 
+            box-shadow: 0 10px 30px rgba(45,27,25,0.3); 
+            font-size: 22px; 
             transition: var(--transition);
         }
-        .cart-trigger:hover { transform: scale(1.1) rotate(-10deg); }
+
         .cart-badge { 
             position: absolute; 
-            top: -2px; 
-            right: -2px; 
-            background: #ff4444; 
-            color: white; 
-            width: 24px; 
-            height: 24px; 
-            border-radius: 50%; 
-            font-size: 11px; 
-            font-weight: 800; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            border: 2px solid white; 
+            top: -8px; right: -8px; 
+            background: var(--secondary); 
+            width: 24px; height: 24px; 
+            border-radius: 8px; font-size: 11px; font-weight: 800; 
+            display: flex; align-items: center; justify-content: center; 
+            border: 3px solid var(--bg-light);
         }
 
-        .modal { 
-            display: none; 
-            position: fixed; 
-            z-index: 2000; 
-            top: 0; left: 0; 
-            width: 100%; height: 100%; 
-            background: rgba(61, 37, 34, 0.4); 
-            backdrop-filter: blur(12px); 
-        }
+        /* MODAL */
         .modal-content { 
             background: white; 
-            width: 92%; 
-            max-width: 480px; 
-            margin: 4vh auto; 
-            border-radius: 30px; 
-            padding: 35px; 
-            position: relative; 
-            max-height: 90vh; 
-            overflow-y: auto; 
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            width: 95%; max-width: 450px; 
+            margin: 5vh auto; 
+            border-radius: 24px; 
+            padding: 40px 30px; 
         }
-        
-        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid #f8f8f8; }
-        
+
         .btn-checkout { 
             background: #25d366; 
-            cursor: pointer; border: none; font-family: inherit; width: 100%; color: white; 
-            padding: 20px; border-radius: 18px; margin-top: 30px; font-weight: 800; font-size: 18px; 
-            display: flex; align-items: center; justify-content: center; gap: 12px; 
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); transition: var(--transition);
+            border-radius: 12px; 
+            padding: 18px; 
+            font-weight: 700; 
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2);
         }
-        .btn-checkout:hover { background: #1eb954; transform: translateY(-3px); }
 
         @media (min-width: 769px) {
-            body { padding-top: 145px; }
+            body { padding-top: 150px; }
             .navbar-main { flex-direction: row; justify-content: space-between; padding: 15px 8%; }
-            nav { justify-content: center; gap: 30px; }
-            .katalog-container { grid-template-columns: repeat(4, 1fr); gap: 30px; }
-            .card img { height: 240px; }
-            .hero { height: 85vh; margin: 0; border-radius: 0; }
+            .katalog-container { grid-template-columns: repeat(4, 1fr); gap: 25px; }
+            .card img { height: 220px; }
+            .hero { height: 75vh; margin: 0 40px; border-radius: 40px; }
             .info-grid { grid-template-columns: 1fr 1fr; }
-            section { padding: 100px 10%; }
+            section { padding: 80px 8%; }
         }
     </style>
 </head>
@@ -316,7 +284,7 @@
         </div>
         <nav>
             <a href="#home">Home</a>
-            <a href="#tentangkami">Tentang Kami</a>
+            <a href="#tentangkami">Tentang</a>
             <a href="#produk">Produk</a>
             <a href="#info">Info</a>
             <a href="#lokasi">Lokasi</a>
@@ -330,58 +298,58 @@
 </button>
 
 <main>
-    <section id="home" class="hero">
+    <section id="home" class="hero" data-aos="fade-in">
         <img src="produk12.jpg" alt="Browniesta Hero Image" class="hero-img" 
              onerror="this.src='https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=1974&auto=format&fit=crop';">
         
-        <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(37,25,22,0.2), rgba(37,25,22,0.7)); z-index: 2;"></div>
+        <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(45,27,25,0.1), rgba(45,27,25,0.7)); z-index: 2;"></div>
 
-        <div class="hero-content" data-aos="zoom-in">
-            <h1 style="color: white; text-shadow: 0 10px 30px rgba(0,0,0,0.3); font-size: clamp(40px, 8vw, 70px); font-family: 'Lora', serif; margin-bottom: 10px;">Browniesta.co</h1>
-            <p style="font-size: clamp(16px, 4vw, 22px); opacity: 0.95; margin-bottom: 40px; font-weight: 500; color: #fff; letter-spacing: 0.5px;">
+        <div class="hero-content" data-aos="zoom-out" data-aos-delay="200">
+            <h1 style="color: white; font-size: clamp(42px, 8vw, 75px); font-family: 'Lora', serif; margin-bottom: 15px; letter-spacing: -1px;">Browniesta.co</h1>
+            <p style="font-size: clamp(16px, 4vw, 20px); opacity: 0.9; margin-bottom: 35px; color: #fff; font-weight: 400;">
                 Premium Homemade Brownies - Rasakan kebahagiaan di setiap gigitan! ✨
             </p>
-            <a href="#produk" style="background: var(--secondary); color: white; padding: 20px 50px; border-radius: 50px; text-decoration: none; font-weight: 800; display: inline-block; transition: var(--transition); box-shadow: 0 15px 35px rgba(198, 149, 91, 0.4); text-transform: uppercase; letter-spacing: 2px; font-size: 14px;">
-                LIHAT KATALOG
+            <a href="#produk" style="background: var(--secondary); color: white; padding: 18px 40px; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-block; transition: var(--transition); text-transform: uppercase; letter-spacing: 1px; font-size: 13px;">
+                Eksplor Menu
             </a>
         </div>
     </section>
 
-    <section id="tentangkami" style="padding: 100px 5%; background: #fff;">
-        <div class="info-grid" style="align-items: center;">
-            <div class="info-card" data-aos="fade-right" style="padding: 0; overflow: hidden; border: none; box-shadow: none;">
+    <section id="tentangkami" style="padding: 100px 8%;">
+        <div class="info-grid" style="display: grid; gap: 50px; align-items: center;">
+            <div data-aos="fade-right">
                 <img src="produk11.jpg" alt="Pembuatan Browniesta" 
-                     style="width: 100%; height: 500px; object-fit: cover; border-radius: 35px; box-shadow: var(--shadow);">
+                     style="width: 100%; height: 450px; object-fit: cover; border-radius: 30px; box-shadow: var(--shadow-lg);"
+                     onerror="this.src='https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?q=80&w=1000&auto=format&fit=crop';">
             </div>
 
-            <div class="about-text" data-aos="fade-left" style="padding: 20px;">
-                <h4 style="color: var(--secondary); font-weight: 800; letter-spacing: 3px; text-transform: uppercase; font-size: 14px; margin-bottom: 15px;">Cerita Kami</h4>
-                <h2 style="font-family: 'Lora', serif; font-size: clamp(32px, 5vw, 45px); color: var(--primary); line-height: 1.2; margin-bottom: 30px;">
+            <div class="about-text" data-aos="fade-left">
+                <h4 style="color: var(--secondary); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 12px; margin-bottom: 10px;">Cerita Kami</h4>
+                <h2 style="font-family: 'Lora', serif; font-size: clamp(30px, 5vw, 40px); color: var(--primary); line-height: 1.2; margin-bottom: 25px;">
                     Dibuat dengan Hati, Disajikan dengan Cinta.
                 </h2>
-                <p style="color: var(--text-muted); font-size: 17px; margin-bottom: 30px; text-align: justify; line-height: 1.8;">
-                    Berawal dari dapur rumah di Bogor, <strong>Browniesta.co</strong> lahir dari keinginan untuk menghadirkan camilan yang tidak hanya manis, tapi juga memberikan kehangatan di setiap gigitannya menggunakan bahan-bahan premium pilihan.
+                <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 30px; text-align: justify;">
+                    Berawal dari dapur rumah di Bogor, <strong>Browniesta.co</strong> lahir dari keinginan untuk menghadirkan camilan yang tidak hanya manis, tapi juga memberikan kehangatan di setiap gigitannya.
                 </p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div style="background: var(--bg-light); padding: 20px; border-radius: 20px; border-bottom: 4px solid var(--secondary); transition: var(--transition);">
-                        <h5 style="color: var(--primary); margin-bottom: 8px; font-size: 18px;">100% Halal</h5>
-                        <p style="font-size: 13px; color: var(--text-muted);">Bahan pilihan terjamin kehalalannya.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div style="background: var(--accent); padding: 20px; border-radius: 15px;">
+                        <h5 style="color: var(--primary); margin-bottom: 5px;">100% Halal</h5>
+                        <p style="font-size: 12px; color: var(--text-muted);">Bahan pilihan terjamin.</p>
                     </div>
-                    <div style="background: var(--bg-light); padding: 20px; border-radius: 20px; border-bottom: 4px solid var(--secondary); transition: var(--transition);">
-                        <h5 style="color: var(--primary); margin-bottom: 8px; font-size: 18px;">Freshly Baked</h5>
-                        <p style="font-size: 13px; color: var(--text-muted);">Dibuat baru setiap hari sesuai pesanan.</p>
+                    <div style="background: var(--accent); padding: 20px; border-radius: 15px;">
+                        <h5 style="color: var(--primary); margin-bottom: 5px;">Freshly Baked</h5>
+                        <p style="font-size: 12px; color: var(--text-muted);">Dibuat baru setiap hari.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-   <section id="produk" style="padding: 80px 0;">
+   <section id="produk" style="padding: 60px 0; background: #fafafa;">
     <h2 class="section-title">Menu Favorit</h2>
     <div class="katalog-container">
         <div class="card" data-aos="fade-up">
-            <img src="produk2.jpg" alt="Original" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display:none; width:100%; height:180px; background:#f0f0f0; text-align:center; line-height:180px; color:#999; font-weight:600;">Foto Produk</div>
+            <img src="produk2.jpg" alt="Original" onerror="this.src='https://images.unsplash.com/photo-1564355808539-22fda35bed7e?q=80&w=500&auto=format&fit=crop';">
             <div class="card-body">
                 <h3>Brownies Original</h3>
                 <span class="price">Rp 15.000</span>
@@ -390,8 +358,7 @@
         </div>
 
         <div class="card" data-aos="fade-up" data-aos-delay="100">
-            <img src="produk4.jpg" alt="Keju" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display:none; width:100%; height:180px; background:#f0f0f0; text-align:center; line-height:180px; color:#999; font-weight:600;">Foto Produk</div>
+            <img src="produk4.jpg" alt="Keju" onerror="this.src='https://images.unsplash.com/photo-1530610476181-d83430b64dcd?q=80&w=500&auto=format&fit=crop';">
             <div class="card-body">
                 <h3>Brownies Keju Premium</h3>
                 <span class="price">Rp 20.000</span>
@@ -400,8 +367,7 @@
         </div>
 
         <div class="card" data-aos="fade-up" data-aos-delay="200"> 
-            <img src="produk6.jpg" alt="Almond" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display:none; width:100%; height:180px; background:#f0f0f0; text-align:center; line-height:180px; color:#999; font-weight:600;">Foto Produk</div>
+            <img src="produk6.jpg" alt="Almond" onerror="this.src='https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=500&auto=format&fit=crop';">
             <div class="card-body">
                 <h3>Brownies Almond Slice</h3>
                 <span class="price">Rp 20.000</span>
@@ -410,8 +376,7 @@
         </div>
 
         <div class="card" data-aos="fade-up" data-aos-delay="300">
-            <img src="produk5.jpg" alt="Mix" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display:none; width:100%; height:180px; background:#f0f0f0; text-align:center; line-height:180px; color:#999; font-weight:600;">Foto Produk</div>
+            <img src="produk5.jpg" alt="Mix" onerror="this.src='https://images.unsplash.com/photo-1589119634735-12cb0d210995?q=80&w=500&auto=format&fit=crop';">
             <div class="card-body">
                 <h3>Brownies Mix Combo</h3>
                 <span class="price">Rp 18.000</span>
@@ -421,75 +386,73 @@
     </div>
 </section>
             
-    <section id="info" style="padding: 100px 0; background: #fff;">
+    <section id="info" style="padding: 100px 5%;">
         <h2 class="section-title">Informasi Toko</h2>
-        <div class="info-grid">
-            <div class="info-card" data-aos="fade-right">
-                <h3 style="color: var(--secondary); margin-bottom: 20px; font-size: 24px;">🕒 Jam Operasional</h3>
-                <p style="font-size: 18px; color: var(--primary); font-weight: 700;">Minggu:</p>
-                <p style="font-size: 24px; color: var(--secondary); font-weight: 800; margin-bottom: 15px;">07.00 - 12.00 WIB</p>
-                <p style="font-size: 15px; color: var(--text-muted); border-top: 1px solid #eee; padding-top: 15px;">Kami selalu siap melayani pesanan Anda untuk menemani waktu santai bersama keluarga.</p>
+        <div class="info-grid" style="display: grid; gap: 25px;">
+            <div class="info-card" data-aos="fade-up">
+                <h3 style="color: var(--primary); margin-bottom: 20px;">🕒 Jam Operasional</h3>
+                <p style="font-size: 16px; opacity: 0.8;">Minggu:</p>
+                <p style="font-size: 28px; color: var(--secondary); font-weight: 800;">07.00 - 12.00 WIB</p>
+                <p style="margin-top: 15px; font-size: 14px; color: var(--text-muted);">Kami siap melayani waktu santai Anda.</p>
             </div>
-            <div class="info-card" data-aos="fade-left">
-                <h3 style="color: var(--secondary); margin-bottom: 20px; font-size: 24px;">📦 Pengiriman</h3>
-                <p style="line-height: 1.8; font-size: 16px;">Melayani pengiriman area <strong>Bogor dan sekitarnya</strong>. Setiap kotak brownies dipacking dengan aman agar sampai di tangan Anda dalam kondisi tetap fresh dan cantik.</p>
-                <div style="margin-top: 20px; padding: 15px; background: var(--accent); border-radius: 12px; font-weight: 600; color: var(--primary); text-align: center;">
+            <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                <h3 style="color: var(--primary); margin-bottom: 20px;">📦 Pengiriman</h3>
+                <p style="font-size: 15px;">Melayani pengiriman area <strong>Bogor dan sekitarnya</strong>. Packing aman dan higienis.</p>
+                <div style="margin-top: 20px; padding: 12px; background: white; border-radius: 10px; font-weight: 700; color: var(--primary); text-align: center; font-size: 13px;">
                     🚀 Same Day Delivery Available
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="lokasi" style="padding: 100px 5%;">
+    <section id="lokasi" style="padding: 80px 5%; background: #fafafa;">
         <h2 class="section-title">Lokasi Kami</h2>
-        <div class="info-card" style="max-width: 1000px; margin: 0 auto;" data-aos="fade-up">
-            <p style="font-size: 18px; margin-bottom: 20px; text-align: center;">📍 <strong>Alamat:</strong> Jl. Jembatan Pari Gang H. Isa 1 Rt. 02 Rw 03 Cijujung, Sukaraja, Kabupaten Bogor.</p>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.856214589332!2d106.829462!3d-6.539824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzInMjMuNCJTIDEwNiw0OSc0Ni4xIkU!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+        <div style="max-width: 1000px; margin: 0 auto;" data-aos="zoom-in">
+            <p style="text-align: center; margin-bottom: 30px; font-size: 15px;">📍 Jl. Jembatan Pari Gang H. Isa 1 Rt. 02 Rw 03 Cijujung, Sukaraja, Bogor.</p>
+            <div class="map-container" style="box-shadow: var(--shadow-lg);">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.714574972688!2d106.8291!3d-6.5501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzMnMDAuNCJTIDEwNsKwNDknNDQuOCJF!5e0!3m2!1sid!2sid!4v1630000000000!5m2!1sid!2sid" 
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <a href="https://maps.google.com/?q=Browniesta+Cijujung" target="_blank" style="display: inline-block; width: 100%; text-align: center; margin-top: 25px; color: var(--secondary); font-weight: 800; text-decoration: none; font-size: 18px; transition: var(--transition);">Buka di Google Maps →</a>
         </div>
     </section>
 
-    <section id="kontak" style="text-align: center; background: var(--primary); color: white; padding: 100px 5%; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: -50px; left: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.03); border-radius: 50%;"></div>
-        <h2 class="section-title" style="color: white; border-bottom: none;">Hubungi Kami</h2>
-        <p style="opacity: 0.8; margin-bottom: 40px; font-size: 18px;">Punya pertanyaan atau pesanan khusus untuk acara Anda?</p>
+    <section id="kontak" style="text-align: center; background: var(--primary); color: white; padding: 100px 5%;">
+        <h2 class="section-title" style="color: white;">Hubungi Kami</h2>
+        <p style="opacity: 0.7; margin-bottom: 40px;">Punya pertanyaan atau pesanan khusus?</p>
         <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
-            <p style="font-size: 18px; font-weight: 500; background: rgba(255,255,255,0.1); padding: 15px 30px; border-radius: 50px;">📧 browniesta.co@gmail.com</p>
-            <a href="https://wa.me/6288973395327" style="text-decoration: none; font-size: 28px; font-weight: 800; color: var(--secondary); transition: var(--transition);">📞 +62 889-7339-5327</a>
+            <p style="font-size: 15px; letter-spacing: 1px;">📧 browniesta.co@gmail.com</p>
+            <a href="https://wa.me/6288973395327" style="text-decoration: none; font-size: 24px; font-weight: 700; color: var(--secondary);">📞 +62 889-7339-5327</a>
         </div>
     </section>
 </main>
 
 <div id="cartModal" class="modal">
     <div class="modal-content">
-        <span onclick="closeCart()" style="position: absolute; right: 25px; top: 20px; font-size: 32px; cursor: pointer; color: #ccc;">&times;</span>
-        <h2 style="font-family: 'Lora', serif; margin-bottom: 25px; color: var(--primary); font-size: 28px;">Keranjang Saya</h2>
+        <span onclick="closeCart()" style="position: absolute; right: 25px; top: 20px; font-size: 30px; cursor: pointer; color: #aaa;">&times;</span>
+        <h2 style="font-family: 'Lora', serif; margin-bottom: 25px; color: var(--primary);">Keranjang</h2>
         <div id="cartItemsList"></div>
-        <div style="margin-top: 30px; border-top: 2px dashed #eee; padding-top: 25px;">
-            <div style="display: flex; justify-content: space-between; font-size: 22px; font-weight: 800;">
+        <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
+            <div style="display: flex; justify-content: space-between; font-size: 20px; font-weight: 800;">
                 <span>Total:</span>
                 <span id="totalPrice" style="color: var(--secondary);">Rp 0</span>
             </div>
         </div>
-        <button class="btn-checkout" onclick="checkoutWA()">
-            <span>💬</span> Pesan Sekarang via WA
+        <button class="btn-checkout" onclick="checkoutWA()" style="cursor:pointer; border:none; width:100%; color:white; margin-top:25px; font-family:inherit;">
+            PESAN VIA WHATSAPP
         </button>
     </div>
 </div>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ duration: 800, once: true });
     let cart = [];
 
     function addToCart(name, price) {
         cart.push({ name, price });
         updateCartUI();
         const badge = document.getElementById('cartCount');
-        badge.style.transform = 'scale(1.5)';
+        badge.style.transform = 'scale(1.3)';
         setTimeout(() => badge.style.transform = 'scale(1)', 200);
     }
 
@@ -497,18 +460,18 @@
         document.getElementById('cartCount').innerText = cart.length;
         const list = document.getElementById('cartItemsList');
         const totalEl = document.getElementById('totalPrice');
-        list.innerHTML = cart.length === 0 ? '<div style="text-align:center; padding:40px 0;"><p style="font-size:40px; margin-bottom:10px;">🛒</p><p style="color:#999;">Wah, keranjangmu masih kosong...</p></div>' : '';
+        list.innerHTML = cart.length === 0 ? '<p style="text-align:center; color:#999; padding:20px;">Keranjang kosong</p>' : '';
         
         let total = 0;
         cart.forEach((item, index) => {
             total += item.price;
             list.innerHTML += `
-                <div class="cart-item">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #f9f9f9;">
                     <div>
-                        <p style="font-weight:700; font-size:15px; color:var(--primary);">${item.name}</p>
-                        <p style="color:var(--secondary); font-size:14px; font-weight:600;">Rp ${item.price.toLocaleString()}</p>
+                        <p style="font-weight:700; font-size:14px;">${item.name}</p>
+                        <p style="color:var(--secondary); font-size:13px;">Rp ${item.price.toLocaleString()}</p>
                     </div>
-                    <button style="color:#ff4444; border:none; background:#fff1f1; cursor:pointer; font-weight:bold; padding:8px 15px; border-radius:10px; font-size:12px;" onclick="removeItem(${index})">Hapus</button>
+                    <button style="color:#ff4444; border:none; background:none; cursor:pointer; font-size:12px;" onclick="removeItem(${index})">Hapus</button>
                 </div>
             `;
         });
@@ -538,22 +501,16 @@
             text += (i + 1) + ". *" + item.name + "* (Rp " + item.price.toLocaleString() + ")%0A";
             total += item.price;
         });
-        text += "%0A---------------------------%0A*Total Bayar: Rp " + total.toLocaleString() + "*%0A%0AMohon konfirmasi pesanannya ya Admin! ✨";
+        text += "%0A*Total: Rp " + total.toLocaleString() + "*%0A%0AMohon diproses ya! ✨";
         window.open("https://wa.me/6288973395327?text=" + text, '_blank');
     }
 
     function searchProduct() {
         const kw = document.getElementById('searchInput').value.toLowerCase();
         const cards = document.querySelectorAll('.card');
-        let found = false;
         cards.forEach(c => {
             const t = c.querySelector('h3').innerText.toLowerCase();
-            if(t.includes(kw)) {
-                c.style.display = "block";
-                found = true;
-            } else {
-                c.style.display = "none";
-            }
+            c.style.display = t.includes(kw) ? "block" : "none";
         });
         document.getElementById('produk').scrollIntoView();
     }
